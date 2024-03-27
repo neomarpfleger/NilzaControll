@@ -1,0 +1,38 @@
+{
+  "uniformeEPI": [
+    {
+      "id": 1,
+      "nome": "Neomar",
+      "data": "14 09 1988",
+      "uniformeEPI": "camiseta",
+      "tamanho": "g"
+    },
+    {
+      "id": 2,
+      "nome": "Kamila",
+      "data": "16 09 1989",
+      "uniformeEPI": "luva pano",
+      "tamanho": ""
+    },
+    {
+      "uniformeEPI": "Camiseta longa",
+      "tamanho": "gg",
+      "id": 3
+    },
+    {
+      "uniformeEPI": "Camiseta longa",
+      "tamanho": "gg",
+      "id": 4
+    },
+    {
+      "uniformeEPI": "Moletao",
+      "tamanho": "g",
+      "id": 5
+    },
+    {
+      "uniformeEPI": "Protetor pele",
+      "tamanho": " ",
+      "id": 6
+    }
+  ]
+}

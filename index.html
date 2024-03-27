@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controle de EPIs</title>
+
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+<!-- Cabecalho -->
+<header>
+
+    <nav class="cabecalho">
+        <a class="logo" href="../index.html"></a>
+
+        <div class="cabecalho__icones">
+            <a href="./enviar-video.html" class="cabecalho__videos"></a>
+        </div>
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <form class="container__formulario" data-formulario>
+        <h2 class="formulario__titulo">Solicite seu uniforme ou EPI!</h2>
+
+        <div class="formulario__campo uniformeOuEPI">
+            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
+            <select id="item" name="item">
+                <option value=" "></option>
+                <option value="Camiseta">Camiseta</option>
+                <option value="Camiseta longa">Camiseta longa</option>
+                <option value="Calca">Calça</option>
+                <option value="Botina">Botina</option>
+                <option value="Luva pano">Luva pano</option>
+                <option value="Luva latex">Luva latex</option>
+                <option value="Protetor auditivo">Protetor auditivo</option>
+                <option value="Protetor pele">Protetor pele</option>
+                <OPtion value="Moletao">Moletão</OPtion>
+            </select>
+        </div>
+
+        <div class="formulario__campo botina">
+            <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
+            <select id="tamBotina" name="quantidade">
+                <option value=" "></option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+            </select>
+        </div>
+
+        <div class="formulario__campo tamanhoUniforme">
+            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
+            <select id="tamUniforme" name="quantidade">
+                <option value=" "></option>
+                <option value="p">P</option>
+                <option value="m">M</option>
+                <option value="g">G</option>
+                <option value="gg">GG</option>
+            </select>
+        </div>
+
+        <div class="formulario__campo itemPadrao">
+            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
+            <select id="tamUnico" name="quantidade">
+                <option value="g">G</option> 
+
+            </select>
+        </div>
+
+        <button class="adionaItem" type="button">Adicionar item a minha lista</button>
+
+    </form>
+
+    <ul class="minhaLista">
+        <!--<li class="item">
+            <p class="nomeItem">camiseta</p>
+            <p class="tamanhoItem">G</p>
+        </li>-->
+    </ul>
+
+    <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
+
+</main>
+<script type="module" src="./js/validacao.js"></script>
+<script type="module" src="./js/minhaLista.js"></script>
+<script type="module" src="./js/enviaSolitacao.js"></script>
+</body>
+</html>
