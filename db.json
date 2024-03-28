@@ -47,6 +47,21 @@
       "tamanho": "41",
       "id": 8,
       "dataDeEntrega": "28/03/2024"
+    },
+    {
+      "uniformeEPI": "Camiseta",
+      "tamanho": "m",
+      "id": 9
+    },
+    {
+      "uniformeEPI": "Botina",
+      "tamanho": "39",
+      "id": 10
+    },
+    {
+      "uniformeEPI": "Protetor pele",
+      "tamanho": " ",
+      "id": 11
     }
   ]
 }
