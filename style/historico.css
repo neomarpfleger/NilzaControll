@@ -1,4 +1,12 @@
 
+#tituloHistorico{
+    display: grid;
+    width: 100vw;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
 .pedidosEntregues{
     display:flex;
     width: 25rem;

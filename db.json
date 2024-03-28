@@ -29,6 +29,24 @@
       "tamanho": "m",
       "id": 5,
       "dataDeEntrega": "27/03/2024"
+    },
+    {
+      "uniformeEPI": "Camiseta",
+      "tamanho": "gg",
+      "id": 6,
+      "dataDeEntrega": "28/03/2024"
+    },
+    {
+      "uniformeEPI": "Protetor auditivo",
+      "tamanho": " ",
+      "id": 7,
+      "dataDeEntrega": "28/03/2024"
+    },
+    {
+      "uniformeEPI": "Botina",
+      "tamanho": "41",
+      "id": 8,
+      "dataDeEntrega": "28/03/2024"
     }
   ]
 }
