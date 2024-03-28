@@ -1,38 +1,34 @@
 {
   "uniformeEPI": [
     {
+      "uniformeEPI": "Protetor pele",
+      "tamanho": " ",
       "id": 1,
-      "nome": "Neomar",
-      "data": "14 09 1988",
-      "uniformeEPI": "camiseta",
-      "tamanho": "g"
+      "dataDeEntrega": "27/03/2024"
     },
     {
+      "uniformeEPI": "Camiseta",
+      "tamanho": "g",
       "id": 2,
-      "nome": "Kamila",
-      "data": "16 09 1989",
-      "uniformeEPI": "luva pano",
-      "tamanho": ""
+      "dataDeEntrega": "27/03/2024"
     },
     {
-      "uniformeEPI": "Camiseta longa",
-      "tamanho": "gg",
-      "id": 3
+      "uniformeEPI": "Botina",
+      "tamanho": "42",
+      "id": 3,
+      "dataDeEntrega": "27/03/2024"
     },
     {
-      "uniformeEPI": "Camiseta longa",
-      "tamanho": "gg",
-      "id": 4
+      "uniformeEPI": "Botina",
+      "tamanho": "39",
+      "id": 4,
+      "dataDeEntrega": "27/03/2024"
     },
     {
       "uniformeEPI": "Moletao",
-      "tamanho": "g",
-      "id": 5
-    },
-    {
-      "uniformeEPI": "Protetor pele",
-      "tamanho": " ",
-      "id": 6
+      "tamanho": "m",
+      "id": 5,
+      "dataDeEntrega": "27/03/2024"
     }
   ]
 }

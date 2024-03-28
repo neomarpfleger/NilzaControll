@@ -1,0 +1,17 @@
+
+.pedidosEntregues{
+    display:flex;
+    width: 25rem;
+    height: 1.7rem;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 1rem auto 0;
+    background-color: rgb(169, 124, 211);
+    border: 1px solid rgb(151, 12, 185);
+    border-radius: 15rem;
+}
+
+p{
+    margin-right: 1rem;
+    color: rgb(238, 241, 241);
+}
