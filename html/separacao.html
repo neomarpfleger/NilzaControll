@@ -3,23 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NilzaControl/Separação</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/separacao.css">
+    <link rel="stylesheet" href="../style/header.css">
     
 </head>
 <body>
-    
-<ul class="listaParaSeparar">
-    <li class="pedidos">
-        <p class="nome">Neomar</p>
-        <p class="uniformeEPI">camiseta</p>
-        <p class="tamanho">G</p>
-        <p class="data">14/09/1988</p>
-        <input type="checkbox" name="" id="separacaoOK">
-    </li>
-</ul>
+    <header>
+        <div id="navegacao">
+            <ul>
+                <li class="item">
+                    <a href="../index.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="item ative">
+                    <a href="./html/separacao.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                            <span class="text">Separação</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../html/historico.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </span>
+                        <span class="text">Galeria</span>
+                    </a>
+                </li>
+                <!--<li class="item">
+                    <a href="#">
+                        <span class="icone">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <span class="text">Localizacao</span>
+                    </a>
+                </li><li class="item">
+                    <a href="#">
+                        <span class="icone">
+                            <i class="fa-solid fa-comment"></i>
+                        </span>
+                        <span class="text">Contato</span>
+                    </a>
+                </li>-->
+                <div class="indicador"></div>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <ul class="listaParaSeparar">
+            <li class="pedidos">
+                <p class="nome">Neomar</p>
+                <p class="uniformeEPI">camiseta</p>
+                <p class="tamanho">G</p>
+                <p class="data">14/09/1988</p>
+                <input type="checkbox" name="" id="separacaoOK">
+            </li>
+        </ul>
+    </main>
 
 <script src="../js/emSeparacao.js"></script>
+<script src="../js/header.js"></script>
 </body>
 </html>

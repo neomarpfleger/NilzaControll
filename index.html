@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>controle de EPIs</title>
+    <title>NilzaControl/Inicio</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/header.css">
 </head>
 <body>
 
-<!-- Cabecalho -->
-<header>
-
-    <nav class="navegador">
-        <ul>
-            <a href="./html/separacao.html"><li>Separação</li></a>
-            <a href="./html/historico.html"><li>Historico</li></a>
-        </ul>
-
-    </nav>
-
-</header>
-
+    <header>
+        <div id="navegacao">
+            <ul>
+                <li class="item ative">
+                    <a href="#">
+                        <span class="icone">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <span class="text">Início</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./html/separacao.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                            <span class="text">Portifolio</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./html/historico.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </span>
+                        <span class="text">Galeria</span>
+                    </a>
+                </li>
+                <div class="indicador"></div>
+            </ul>
+        </div>
+    </header>
+    
 <main class="container">
 
     <form class="container__formulario" data-formulario>
@@ -87,6 +108,7 @@
     <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
 
 </main>
+<script type="module" src="./js/header.js"></script>
 <script type="module" src="./js/validacao.js"></script>
 <script type="module" src="./js/minhaLista.js"></script>
 <script type="module" src="./js/enviaSolitacao.js"></script>

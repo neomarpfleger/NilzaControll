@@ -1,5 +1,5 @@
 async function listaHistorico() {
-    const conexao = await fetch("http://localhost:3000/uniformeEPI");
+    const conexao = await fetch("http://localhost:3001/uniformeEPI");
     const conexaoConvertida = await conexao.json();
 
     console.log("Lista de EPIs:", conexaoConvertida);

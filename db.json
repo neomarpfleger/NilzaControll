@@ -51,17 +51,37 @@
     {
       "uniformeEPI": "Camiseta",
       "tamanho": "m",
-      "id": 9
+      "id": 9,
+      "dataDeEntrega": "28/03/2024"
     },
     {
       "uniformeEPI": "Botina",
       "tamanho": "39",
-      "id": 10
+      "id": 10,
+      "dataDeEntrega": "28/03/2024"
     },
     {
       "uniformeEPI": "Protetor pele",
       "tamanho": " ",
-      "id": 11
+      "id": 11,
+      "dataDeEntrega": "28/03/2024"
+    },
+    {
+      "uniformeEPI": "Luva latex",
+      "tamanho": " ",
+      "id": 12,
+      "dataDeEntrega": "28/03/2024"
+    },
+    {
+      "uniformeEPI": "Moletao",
+      "tamanho": "gg",
+      "id": 13,
+      "dataDeEntrega": "29/03/2024"
+    },
+    {
+      "uniformeEPI": "Botina",
+      "tamanho": "39",
+      "id": 14
     }
   ]
 }

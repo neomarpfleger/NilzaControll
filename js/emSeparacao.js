@@ -1,5 +1,5 @@
 async function listaDeEpis() {
-    const conexao = await fetch("http://localhost:3000/uniformeEPI");
+    const conexao = await fetch("http://localhost:3001/uniformeEPI");
     const conexaoConvertida = await conexao.json();
 
     console.log("Lista de EPIs:", conexaoConvertida);
@@ -25,7 +25,7 @@ async function listaDeEpis() {
                     dataDeEntrega: today
                 };
 
-                fetch(`http://localhost:3000/uniformeEPI/${id}`, {
+                fetch(`http://localhost:3001/uniformeEPI/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'

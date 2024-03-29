@@ -1,5 +1,5 @@
 async function listaDeEpis() {
-    const conexao = await fetch("http://localhost:3000/uniformeEPI");
+    const conexao = await fetch("http://localhost:3001/uniformeEPI");
     const conexaoConvertida = await conexao.json();
 
     console.log("Lista de EPIs:", conexaoConvertida);
@@ -15,7 +15,7 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
         const tamanho = element.querySelector(".tamanhoItem").textContent;
 
         try {
-            const response = await fetch('http://localhost:3000/uniformeEPI', {
+            const response = await fetch('http://localhost:3001/uniformeEPI', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
