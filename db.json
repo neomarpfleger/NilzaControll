@@ -82,6 +82,11 @@
       "uniformeEPI": "Botina",
       "tamanho": "39",
       "id": 14
+    },
+    {
+      "uniformeEPI": "Luva pano",
+      "tamanho": " ",
+      "id": 15
     }
   ]
 }

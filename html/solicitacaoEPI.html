@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NilzaControl/Inicio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style/solicitacaoEPI.css">
+    <link rel="stylesheet" href="../style/header.css">
+</head>
+<body>
+
+    <header>
+        <div id="navegacao">
+            <ul>
+                <li class="itemNav ative">
+                    <a href="#">
+                        <span class="icone">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <span class="text">Início</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./separacao.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                            <span class="text">Portifolio</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./historico.html">
+                        <span class="icone">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </span>
+                        <span class="text">Galeria</span>
+                    </a>
+                </li>
+                <div class="indicador"></div>
+            </ul>
+        </div>
+    </header>
+    
+<main class="container">
+
+    <form class="container__formulario" data-formulario>
+        <h2>Seja bem vindo Kamila</h2>
+
+        <div class="formulario__campo uniformeOuEPI">
+            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
+            <select id="item" class="select" name="item">
+                <option value=" "></option>
+                <option value="Camiseta">Camiseta</option>
+                <option value="Camiseta longa">Camiseta longa</option>
+                <option value="Calca">Calça</option>
+                <option value="Botina">Botina</option>
+                <option value="Luva pano">Luva pano</option>
+                <option value="Luva latex">Luva latex</option>
+                <option value="Protetor auditivo">Protetor auditivo</option>
+                <option value="Protetor pele">Protetor pele</option>
+                <OPtion value="Moletao">Moletão</OPtion>
+            </select>
+        </div>
+
+        <div class="formulario__campo botina">
+            <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
+            <select id="tamBotina" class="select name="quantidade">
+                <option value=" "></option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+            </select>
+        </div>
+
+        <div class="formulario__campo tamanhoUniforme">
+            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
+            <select id="tamUniforme" class="select name="quantidade">
+                <option value=" "></option>
+                <option value="p">P</option>
+                <option value="m">M</option>
+                <option value="g">G</option>
+                <option value="gg">GG</option>
+            </select>
+        </div>
+
+        <div class="formulario__campo itemPadrao">
+            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
+            <select id="tamUnico" class="select name="quantidade">
+                <option value="g">G</option> 
+
+            </select>
+        </div>
+
+        <button class="btnAdionaItem" type="button">Adicionar item a minha lista</button>
+
+    </form>
+
+    <div class="formLista">
+        <h3>Minha Lista De Solicitação.</h3>
+        <ul class="minhaLista">
+            <!--<li class="itemLista">
+                <p class="nomeItem">camiseta</p>
+                <p class="tamanhoItem">G</p>
+            </li>-->
+        </ul>
+        <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
+    </div>
+</main>
+<script type="module" src="../js/header.js"></script>
+<script type="module" src="../js/validacao.js"></script>
+<script type="module" src="../js/minhaLista.js"></script>
+<script type="module" src="../js/enviaSolitacao.js"></script>
+</body>
+</html>
+
+<!--json-server --watch db.json --port 3001 --cors-->

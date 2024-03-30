@@ -1,118 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NilzaControl/Inicio</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/header.css">
+    <title>NilzaControl</title>
+    
+    <link rel="stylesheet" href="./style/stylee.css">
 </head>
 <body>
+    <div id="container">
+        <div id="nomeSenha">
+            <div class="inputName">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome">
+            </div>
 
-    <header>
-        <div id="navegacao">
-            <ul>
-                <li class="item ative">
-                    <a href="#">
-                        <span class="icone">
-                            <i class="fa-solid fa-house"></i>
-                        </span>
-                        <span class="text">Início</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="./html/separacao.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-book"></i>
-                        </span>
-                            <span class="text">Portifolio</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="./html/historico.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-photo-film"></i>
-                        </span>
-                        <span class="text">Galeria</span>
-                    </a>
-                </li>
-                <div class="indicador"></div>
-            </ul>
+            <div class="inputName">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha">
+            </div>
+            <button id="btnLogin" type="button">Fazer login</button>
         </div>
-    </header>
-    
-<main class="container">
-
-    <form class="container__formulario" data-formulario>
-        <h2 class="formulario__titulo">Solicite seu uniforme ou EPI!</h2>
-
-        <div class="formulario__campo uniformeOuEPI">
-            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
-            <select id="item" name="item">
-                <option value=" "></option>
-                <option value="Camiseta">Camiseta</option>
-                <option value="Camiseta longa">Camiseta longa</option>
-                <option value="Calca">Calça</option>
-                <option value="Botina">Botina</option>
-                <option value="Luva pano">Luva pano</option>
-                <option value="Luva latex">Luva latex</option>
-                <option value="Protetor auditivo">Protetor auditivo</option>
-                <option value="Protetor pele">Protetor pele</option>
-                <OPtion value="Moletao">Moletão</OPtion>
-            </select>
-        </div>
-
-        <div class="formulario__campo botina">
-            <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
-            <select id="tamBotina" name="quantidade">
-                <option value=" "></option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-            </select>
-        </div>
-
-        <div class="formulario__campo tamanhoUniforme">
-            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
-            <select id="tamUniforme" name="quantidade">
-                <option value=" "></option>
-                <option value="p">P</option>
-                <option value="m">M</option>
-                <option value="g">G</option>
-                <option value="gg">GG</option>
-            </select>
-        </div>
-
-        <div class="formulario__campo itemPadrao">
-            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
-            <select id="tamUnico" name="quantidade">
-                <option value="g">G</option> 
-
-            </select>
-        </div>
-
-        <button class="adionaItem" type="button">Adicionar item a minha lista</button>
-
-    </form>
-
-    <ul class="minhaLista">
-        <!--<li class="item">
-            <p class="nomeItem">camiseta</p>
-            <p class="tamanhoItem">G</p>
-        </li>-->
-    </ul>
-
-    <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
-
-</main>
-<script type="module" src="./js/header.js"></script>
-<script type="module" src="./js/validacao.js"></script>
-<script type="module" src="./js/minhaLista.js"></script>
-<script type="module" src="./js/enviaSolitacao.js"></script>
+    </div>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
-
-<!--json-server --watch db.json --port 3000 --cors-->

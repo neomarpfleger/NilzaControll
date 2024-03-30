@@ -16,7 +16,7 @@ btnLogin.addEventListener("click", async function(){
     const usuarioValido = await verificarLogin(nome, senha);
 
     if (usuarioValido) {
-        window.location.href = "index.html";
+        window.location.href = "./html/solicitacaoEPI.html";
     } else {
         alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
     }

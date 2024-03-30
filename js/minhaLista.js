@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const item = document.querySelector("#item");
         const quantidade = document.querySelector("#tamBotina");
         const tamanhoUniforme = document.querySelector("#tamUniforme");
-        const criaNovoitem = document.querySelector(".adionaItem");
+        const criaNovoitem = document.querySelector(".btnAdionaItem");
 
         criaNovoitem.addEventListener("click", function(evento) {
             evento.preventDefault();

@@ -1,0 +1,95 @@
+
+.container{
+    display: flex;
+    width: 100vw;
+    color: rgb(240, 245, 245);
+}
+
+.container__formulario{
+    display: flex;
+    width: 50%;
+    height: 30rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__formulario h2{
+    margin: 3rem auto;
+}
+
+.formulario__campo{
+    margin: 2rem;
+}
+
+.select{
+    margin-top: 1rem;
+    width: 200PX;
+    height: 2rem;
+    border-radius: 15PX;
+    text-align-last: center; /* Para navegadores que suportam */
+    text-align: center; /* Para navegadores que não suportam text-align-last */
+    font-size: 1.2rem;
+}
+
+.btnAdionaItem,.enviaSolitacao{
+    margin-top: 3rem;
+    width: 12rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+.btnAdionaItem, .enviaSolitacao:hover{
+    cursor: pointer;
+}
+
+.formLista{
+    display: flex;
+    justify-content:baseline;
+    margin: 1rem auto;
+    flex-direction: column;
+}
+
+.formLista h3{
+    margin: 2rem 0 2rem 0;
+}
+
+.itemlista{
+    display: flex;
+    height: 2rem;
+    border:1px solid white;
+    border-radius: 25px;
+    margin: 0.5rem;
+    list-style: none;
+    list-style-type: none;
+}
+
+.itemLista p{
+    margin: auto auto;
+    list-style: none;
+    list-style-type: none;
+}
+
+.enviaSolitacao{
+    margin-top: 5rem;
+}
+
+.botina{
+    display: none;
+}
+
+.quantEpi{
+    display: none;
+}
+
+.tamanhoUniforme{
+    display: none;
+}
+
+.itemPadrao{
+    display: none;
+}
+
+.btnEnviaSolicitacao{
+    padding-bottom: 2rem;
+}
