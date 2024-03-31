@@ -8,12 +8,13 @@ async function verificarLogin(nome, senha) {
 
     if (usuarioValido) {
         nomeUsuarioLogado = nome; // Salva o nome do usuário na variável global
+        localStorage.setItem('nomeUsuarioLogado', nome); // Salva o nome do usuário no localStorage
+        window.location.href = `./html/solicitacaoEPI.html?nome=${nome}`;
         return true; // Retorna true se o usuário for válido
     }
 
     return false; // Retorna false se o usuário não for válido
 }
-
 
 btnLogin.addEventListener("click", async function(){
     const nome = document.getElementById("nome").value;
@@ -21,9 +22,7 @@ btnLogin.addEventListener("click", async function(){
 
     const usuarioValido = await verificarLogin(nome, senha);
 
-    if (usuarioValido) {
-        window.location.href = `./html/solicitacaoEPI.html?nome=${nome}`;
-    } else {
+    if (!usuarioValido) {
         alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
     }
 });

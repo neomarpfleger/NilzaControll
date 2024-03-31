@@ -31,7 +31,7 @@
     font-size: 1.2rem;
 }
 
-.btnAdionaItem,.enviaSolitacao{
+.btnAdionaItem{
     margin-top: 3rem;
     width: 12rem;
     height: 3rem;
@@ -39,7 +39,7 @@
     border-radius: 20px;
 }
 
-.btnAdionaItem, .enviaSolitacao:hover{
+.btnAdionaItem:hover{
     cursor: pointer;
 }
 
@@ -71,7 +71,16 @@
 }
 
 .enviaSolitacao{
+    width: 15rem;
+    height: 3rem;
     margin-top: 5rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
+
+.enviaSolitacao:hover{
+    cursor: pointer;
+    background-color: red;
 }
 
 .botina{

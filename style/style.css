@@ -1,0 +1,77 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+:root {
+    --verde:rgb(92,152,58);
+    --branco:#fff;
+    --vermelho: rgb(180,9,33)
+}
+
+.imgLogo{
+    margin-bottom: 3rem;
+    background-color:#fff;
+    border-radius: 10px;
+}
+
+h1{
+    color:var(--branco);
+    margin: 1rem;
+}
+
+#container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#nomeSenha{
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde);
+    border: 1px solid var(--vermelho);
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+.inputName{
+    display: flex;
+    flex-direction: column;
+    margin: 0.7rem;
+    border-radius: 20px;
+}
+
+input{
+    max-width: 12rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin:0.5rem auto;
+    border-radius: 20px;
+    padding-left: 1rem;
+}
+
+#btnLogin{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 20px;
+}
+
+#btnLogin:hover{
+    cursor: pointer;
+    background-color: red;
+    scale:calc(1.1);
+}

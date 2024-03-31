@@ -7,6 +7,8 @@
 
 :root {
     --crl:#222327;
+    --verde:rgb(92,152,58);
+    --branco:#fff;
 }
 
 body {
@@ -71,6 +73,7 @@ body {
 
 #navegacao ul li.ative a .icone{
     transform: translateY(-35px);
+    color: var(--branco);
 }
 
 #navegacao ul li a .text{
@@ -94,7 +97,7 @@ body {
     top: -35px;
     width: 70px;
     height: 70px;
-    background: #29fd53;
+    background: var(--verde);
     border-radius: 50px;
     border: 6px solid var(--crl);
     transition: 0.5s;

@@ -1,17 +1,84 @@
 
-.pedidos{
+:root {
+    --verde:rgb(92,152,58);
+    --branco:#fff;
+    --vermelho: rgb(180,9,33)
+}
+
+.cabecalhoItens{
     display:flex;
-    width: 40rem;
-    height: 1.7rem;
+    width: 55rem;
+    height: 3rem;
     align-items: center;
-    justify-content:space-evenly;
-    margin: 1rem auto 0;
-    background-color: rgb(169, 124, 211);
-    border: 1px solid rgb(151, 12, 185);
+    margin: 3rem auto 0;
+    font-weight: 500;
+    color: var(--branco);
+    background-color: var(--verde);
+    border: 2px solid var(--vermelho);
     border-radius: 15rem;
 }
 
-p{
-    margin-right: 1rem;
-    color: rgb(238, 241, 241);
+.cabecalhoItens p.nome{
+    width: 7rem;
+    margin-left: 4.3rem;
+}
+
+.cabecalhoItens p.uniformeEPI{
+    width: 8rem;
+    margin-left: 1.2rem;
+}
+
+.cabecalhoItens p.tamanho{
+    width: 7rem;
+    margin-left: 1rem;
+}
+
+.cabecalhoItens p.data{
+    width: 10rem;
+    margin-left: 1rem;
+}
+
+.cabecalhoItens p.check{
+    margin-left: 1rem;
+}
+
+.pedidos{
+    display:flex;
+    width: 50rem;
+    height: 1.7rem;
+    align-items: center;
+    margin: 1rem auto 0;
+    font-weight: 500;
+    color: var(--branco);
+    background-color: var(--verde);
+    border: 1px solid var(--vermelho);
+    border-radius: 15rem;
+}
+
+p.nome{
+    width: 7rem;
+    margin-left: 2rem;
+}
+
+p.uniformeEPI{
+    width: 8rem;
+    margin-left: 1rem;
+}
+
+p.tamanho{
+    width: 7rem;
+    margin-left: 1rem;
+}
+
+p.data{
+    width: 7rem;
+    margin-left: 1rem;
+}
+
+p.checkBox{
+    margin-left: 4rem;
+}
+
+input{
+    margin-left: 2rem;
 }

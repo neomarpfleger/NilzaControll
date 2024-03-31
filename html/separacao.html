@@ -19,13 +19,13 @@
                         <span class="icone">
                             <i class="fa-solid fa-house"></i>
                         </span>
-                        <span class="text">Home</span>
+                        <span class="text">Início</span>
                     </a>
                 </li>
                 <li class="item ative">
                     <a href="./html/separacao.html">
                         <span class="icone">
-                            <i class="fa-solid fa-book"></i>
+                            <i class="fa-solid fa-rectangle-list"></i>
                         </span>
                             <span class="text">Separação</span>
                     </a>
@@ -33,9 +33,9 @@
                 <li class="item">
                     <a href="../html/historico.html">
                         <span class="icone">
-                            <i class="fa-solid fa-photo-film"></i>
+                            <i class="fa-solid fa-book"></i>
                         </span>
-                        <span class="text">Galeria</span>
+                        <span class="text">Histórico</span>
                     </a>
                 </li>
                 <!--<li class="item">
@@ -59,22 +59,29 @@
                 <img class="imgLogo" src="../imagens/Inserir um subtítulo (3).png" alt="">
             </div>
             <div id="usuarioLogado">
-                <h1 id="nomeUsuarioLogado">Neomar</h1>
+                <h1 id="nomeUsuarioLogado"></h1>
             </div>
         </div>
     </header>
     <main>
         <ul class="listaParaSeparar">
-            <li class="pedidos">
-                <p class="nome">Neomar</p>
-                <p class="uniformeEPI">camiseta</p>
-                <p class="tamanho">G</p>
-                <p class="data">14/09/1988</p>
-                <input type="checkbox" name="" id="separacaoOK">
+            <li class="cabecalhoItens">
+                <p class="nome">Nome</p>
+                <p class="uniformeEPI">Item</p>
+                <p class="tamanho">Tamanho</p>
+                <p class="data">Data Solicitação</p>
+                <p class="check">Click Para Separação</p>
             </li>
         </ul>
     </main>
-
+<script>const nomeUsuario = localStorage.getItem('nomeUsuarioLogado');
+    if (nomeUsuario) {
+        const nomeFormatado = nomeUsuario.charAt(0).toUpperCase() + nomeUsuario.slice(1);
+        document.getElementById("nomeUsuarioLogado").textContent = `${nomeFormatado}`;
+        document.getElementById("bemVindoUsuario").textContent = `Bem Vindo(a) ${nomeFormatado}!`;
+    }
+    </script>
+<script type="module" src="../js/nomedousuario.js"></script>
 <script src="../js/emSeparacao.js"></script>
 <script src="../js/header.js"></script>
 </body>

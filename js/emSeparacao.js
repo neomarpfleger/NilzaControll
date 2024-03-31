@@ -9,7 +9,7 @@ async function listaDeEpis() {
 
     conexaoConvertida.forEach(epi => {
         if (!epi.dataDeEntrega) {
-            const item = constroiItem(epi.id, epi.nome, epi.uniformeEPI, epi.tamanho, epi.data, epi.dataDeEntrega);
+            const item = constroiItem(epi.id, epi.nomeUsuario, epi.uniformeEPI, epi.tamanho, epi.dataSolicitacao, epi.dataDeEntrega);
             listaParaSeparar.appendChild(item);
         }
     });
@@ -58,7 +58,7 @@ function constroiItem(id, nome, uniformeEPI, tamanho, data, dataDeEntrega) {
                                 <p class="uniformeEPI">${uniformeEPI}</p>
                                 <p class="tamanho">${tamanho}</p>
                                 <p class="data">${data}</p>
-                                <input type="checkbox" name="" id="separacaoOK">`
+                                <p class="checkBox">Confirme</p><input type="checkbox" name="" id="separacaoOK">`
     if (dataDeEntrega) {
         const checkbox = itemEmSeparacao.querySelector('input[type="checkbox"]');
         checkbox.checked = true;

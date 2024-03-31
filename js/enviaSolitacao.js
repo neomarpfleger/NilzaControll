@@ -11,16 +11,17 @@ listaDeEpis();
 
 document.querySelector('.enviaSolitacao').addEventListener('click', async () => {
     document.querySelectorAll(".item").forEach(async (element) => {
+        const nomeUsuario = document.getElementById('nomeUsuarioLogado').textContent;
         const uniformeEPI = element.querySelector(".nomeItem").textContent;
         const tamanho = element.querySelector(".tamanhoItem").textContent;
-
+        const dataSolicitacao = new Date().toLocaleDateString('pt-BR');
         try {
             const response = await fetch('http://localhost:3001/uniformeEPI', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ uniformeEPI, tamanho })
+                body: JSON.stringify({nomeUsuario, uniformeEPI, tamanho, dataSolicitacao })
             });
     
             if (response.ok) {
