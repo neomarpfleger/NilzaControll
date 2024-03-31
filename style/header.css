@@ -21,14 +21,14 @@ body {
     margin-top: 2rem;
     background: #fff;
     position: relative;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-radius: 10px;
 }
 
 #navegacao ul {
     display: flex;
-    width: 100vw;
+    width: 15rem;
     margin-left: 2rem;
 }
 
@@ -38,6 +38,14 @@ body {
     width: 70px;
     height: 70px;
     z-index: 1;
+}
+
+#nomeUsuarioLogado{
+    margin-right: 2rem;
+}
+
+.imgLogo{
+    margin-right: 7rem;
 }
 
 #navegacao ul li a{
@@ -62,7 +70,7 @@ body {
 }
 
 #navegacao ul li.ative a .icone{
-    transform: translateY(-33px);
+    transform: translateY(-35px);
 }
 
 #navegacao ul li a .text{

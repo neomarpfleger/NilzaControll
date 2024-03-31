@@ -87,6 +87,11 @@
       "uniformeEPI": "Luva pano",
       "tamanho": " ",
       "id": 15
+    },
+    {
+      "uniformeEPI": "Calca",
+      "tamanho": "p",
+      "id": 16
     }
   ]
 }

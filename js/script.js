@@ -1,3 +1,4 @@
+let nomeUsuarioLogado; // Variável global para armazenar o nome do usuário logado
 
 async function verificarLogin(nome, senha) {
     const conexao = await fetch("http://localhost:3000/usuario");
@@ -5,7 +6,12 @@ async function verificarLogin(nome, senha) {
 
     const usuarioValido = usuarios.find(usuario => usuario.nome === nome && usuario.senha === senha);
 
-    return usuarioValido;
+    if (usuarioValido) {
+        nomeUsuarioLogado = nome; // Salva o nome do usuário na variável global
+        return true; // Retorna true se o usuário for válido
+    }
+
+    return false; // Retorna false se o usuário não for válido
 }
 
 
@@ -16,9 +22,8 @@ btnLogin.addEventListener("click", async function(){
     const usuarioValido = await verificarLogin(nome, senha);
 
     if (usuarioValido) {
-        window.location.href = "./html/solicitacaoEPI.html";
+        window.location.href = `./html/solicitacaoEPI.html?nome=${nome}`;
     } else {
         alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
     }
 });
-

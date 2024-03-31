@@ -40,13 +40,19 @@
                 </li>
                 <div class="indicador"></div>
             </ul>
+            <div id="logoNilzaControll">
+                <img class="imgLogo" src="../imagens/Inserir um subtítulo (3).png" alt="">
+            </div>
+            <div id="usuarioLogado">
+                <h1 id="nomeUsuarioLogado"></h1>
+            </div>
         </div>
     </header>
     
 <main class="container">
 
     <form class="container__formulario" data-formulario>
-        <h2>Seja bem vindo Kamila</h2>
+        <h2 id="bemVindoUsuario"></h2>
 
         <div class="formulario__campo uniformeOuEPI">
             <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
@@ -109,6 +115,7 @@
         <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
     </div>
 </main>
+<script type="module" src="../js/nomedousuario.js"></script>
 <script type="module" src="../js/header.js"></script>
 <script type="module" src="../js/validacao.js"></script>
 <script type="module" src="../js/minhaLista.js"></script>
