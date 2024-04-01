@@ -1,7 +1,7 @@
 let nomeUsuarioLogado; // Variável global para armazenar o nome do usuário logado
 
 async function verificarLogin(nome, senha) {
-    const conexao = await fetch("https://db-login.vercel.app");
+    const conexao = await fetch("http://localhost:3000/usuario");
     const usuarios = await conexao.json();
 
     const usuarioValido = usuarios.find(usuario => usuario.nome === nome && usuario.senha === senha);
