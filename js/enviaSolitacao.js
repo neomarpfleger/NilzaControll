@@ -1,13 +1,16 @@
-async function listaDeEpis() {
-    const conexao = await fetch("http://localhost:3001/uniformeEPI");
-    const conexaoConvertida = await conexao.json();
+const firebaseConfig = {
+    apiKey: "AIzaSyBKmHpwQWG0vCHael2iMFYzgNv_2ctlij4",
+    authDomain: "nilza-controll.firebaseapp.com",
+    projectId: "nilza-controll",
+    storageBucket: "nilza-controll.appspot.com",
+    messagingSenderId: "304218993931",
+    appId: "1:304218993931:web:56ce1292e315fbfbccde0e",
+    measurementId: "G-TM623T80R8"
+};
 
-    console.log("Lista de EPIs:", conexaoConvertida);
-
-    return conexaoConvertida;
-}
-
-listaDeEpis();
+// Inicializa o Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(app);
 
 document.querySelector('.enviaSolitacao').addEventListener('click', async () => {
     document.querySelectorAll(".item").forEach(async (element) => {
@@ -16,19 +19,14 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
         const tamanho = element.querySelector(".tamanhoItem").textContent;
         const dataSolicitacao = new Date().toLocaleDateString('pt-BR');
         try {
-            const response = await fetch('http://localhost:3001/uniformeEPI', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({nomeUsuario, uniformeEPI, tamanho, dataSolicitacao })
+            // Adiciona um documento à coleção 'uniformeEPI' do Firestore
+            await db.collection('epi-uniforme').add({
+                nomeUsuario,
+                uniformeEPI,
+                tamanho,
+                dataSolicitacao
             });
-    
-            if (response.ok) {
-                alert('Solicitação enviada com sucesso!');
-            } else {
-                throw new Error('Erro ao enviar solicitação');
-            }
+            alert('Solicitação enviada com sucesso!');
         } catch (error) {
             console.error('Erro ao enviar solicitação:', error);
             alert('Erro ao enviar solicitação. Verifique o console para mais detalhes.');
