@@ -18,13 +18,15 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
         const uniformeEPI = element.querySelector(".nomeItem").textContent;
         const tamanho = element.querySelector(".tamanhoItem").textContent;
         const dataSolicitacao = new Date().toLocaleDateString('pt-BR');
+        const dataDeEntrega = "";
         try {
             // Adiciona um documento à coleção 'uniformeEPI' do Firestore
             await db.collection('epi-uniforme').add({
                 nomeUsuario,
                 uniformeEPI,
                 tamanho,
-                dataSolicitacao
+                dataSolicitacao,
+                dataDeEntrega
             });
             alert('Solicitação enviada com sucesso!');
         } catch (error) {

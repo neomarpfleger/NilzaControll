@@ -10,6 +10,7 @@ const firebaseConfig = {
     measurementId: "G-TM623T80R8"
 };
 
+
 // Inicializa o Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore(app);
@@ -18,8 +19,6 @@ async function listaDeEpis() {
     const uniformeEPIRef = db.collection('epi-uniforme');
     const snapshot = await uniformeEPIRef.get();
     const conexaoConvertida = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-
-    console.log("Lista de EPIs:", conexaoConvertida);
 
     const listaParaSeparar = document.querySelector(".listaParaSeparar");
 

@@ -1,17 +1,47 @@
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .container{
+    position: relative;
     display: flex;
     width: 100vw;
+    height: 100vh; /* Para ocupar a altura total da tela */
     color: rgb(240, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../imagens/imagem-trabalhador.jpg');
+    background-size: cover; /* Para cobrir todo o corpo */
+    background-position: center; /* Para centralizar a imagem */
+    opacity: 0.5; /* Opacidade de 50% */
 }
 
 .container__formulario{
+    z-index: 1; /* Coloca o formulário na frente da imagem de fundo */
+    opacity: 1;
     display: flex;
-    width: 50%;
+    width: 30rem;
     height: 30rem;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade de 50% */
+    padding: 1rem; /* Adiciona um espaço interno para o conteúdo */
 }
+
 
 .container__formulario h2{
     margin: 3rem auto;
@@ -44,10 +74,17 @@
 }
 
 .formLista{
+    z-index: 1; /* Coloca o formulário na frente da imagem de fundo */
+    opacity: 1;
     display: flex;
-    justify-content:baseline;
+    width: 20rem;
+    height: 22rem;
     margin: 1rem auto;
+    align-items: center;
     flex-direction: column;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade de 50% */
 }
 
 .formLista h3{
@@ -73,7 +110,7 @@
 .enviaSolitacao{
     width: 15rem;
     height: 3rem;
-    margin-top: 5rem;
+    margin: auto auto 1rem;
     font-size: 1.5rem;
     border-radius: 20px;
 }
