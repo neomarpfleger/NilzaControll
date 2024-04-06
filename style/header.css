@@ -146,3 +146,21 @@ body {
 #navegacao ul li:nth-child(5).ative ~ .indicador {
     transform: translateX(calc(70px * 4));
 }
+
+@media only screen and (max-width: 480px){
+
+    #navegacao {
+        width: 45rem;
+    }
+ 
+    #logoNilzaControll{
+        width: 8rem;
+        height: 3rem;
+    }
+
+    .imgLogo{
+        width: 7rem;
+        height: 3rem;
+        margin-right: 7rem;
+    }
+}

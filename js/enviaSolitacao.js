@@ -13,7 +13,7 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore(app);
 
 document.querySelector('.enviaSolitacao').addEventListener('click', async () => {
-    document.querySelectorAll(".item").forEach(async (element) => {
+    document.querySelectorAll(".itemlista").forEach(async (element) => {
         const nomeUsuario = document.getElementById('nomeUsuarioLogado').textContent;
         const uniformeEPI = element.querySelector(".nomeItem").textContent;
         const tamanho = element.querySelector(".tamanhoItem").textContent;
@@ -21,7 +21,7 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
         const dataDeEntrega = "";
         try {
             // Adiciona um documento à coleção 'uniformeEPI' do Firestore
-            await db.collection('epi-uniforme').add({
+            await db.collection('uniformeEPI').add({
                 nomeUsuario,
                 uniformeEPI,
                 tamanho,

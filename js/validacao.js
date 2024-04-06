@@ -21,7 +21,7 @@ selectElement.addEventListener('change', function() {
         itemBotina.style.display = "none";
     }
     
-    if(itemSelecionado =='Camiseta' || itemSelecionado == 'Calca' || itemSelecionado == 'Moletao' || itemSelecionado == 'Camiseta longa'){
+    if(itemSelecionado =='Camiseta' || itemSelecionado == 'Calça' || itemSelecionado == 'Moletao' || itemSelecionado == 'Camiseta longa'){
         tamanhoUniforme.style.display = "block";
     } else {
         tamanhoUniforme.style.display = "none";

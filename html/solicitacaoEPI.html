@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../style/header.css">
 </head>
 <body>
-
     <header>
         <div id="navegacao">
             <ul>
@@ -51,69 +50,70 @@
     
 <main class="container">
     <div class="background"></div>
-    <form class="container__formulario" data-formulario>
+    <h1 id="bemVindoUsuario"></h1>
+    <div class="container2">
+        <form class="container__formulario" data-formulario>
 
-        <h2 id="bemVindoUsuario"></h2>
+            <div class="formulario__campo uniformeOuEPI">
+                <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
+                <select id="item" class="select" name="item">
+                    <option value=" "></option>
+                    <option value="Camiseta">Camiseta</option>
+                    <option value="Camiseta longa">Camiseta longa</option>
+                    <option value="Calça">Calça</option>
+                    <option value="Botina">Botina</option>
+                    <option value="Luva pano">Luva pano</option>
+                    <option value="Luva latex">Luva latex</option>
+                    <option value="Protetor auditivo">Protetor auditivo</option>
+                    <option value="Protetor pele">Protetor pele</option>
+                    <OPtion value="Moletao">Moletão</OPtion>
+                </select>
+            </div>
 
-        <div class="formulario__campo uniformeOuEPI">
-            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
-            <select id="item" class="select" name="item">
-                <option value=" "></option>
-                <option value="Camiseta">Camiseta</option>
-                <option value="Camiseta longa">Camiseta longa</option>
-                <option value="Calca">Calça</option>
-                <option value="Botina">Botina</option>
-                <option value="Luva pano">Luva pano</option>
-                <option value="Luva latex">Luva latex</option>
-                <option value="Protetor auditivo">Protetor auditivo</option>
-                <option value="Protetor pele">Protetor pele</option>
-                <OPtion value="Moletao">Moletão</OPtion>
-            </select>
+            <div class="formulario__campo botina">
+                <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
+                <select id="tamBotina" class="select name="quantidade">
+                    <option value=" "></option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                </select>
+            </div>
+
+            <div class="formulario__campo tamanhoUniforme">
+                <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
+                <select id="tamUniforme" class="select" name="quantidade">
+                    <option value=" "></option>
+                    <option value="p">P</option>
+                    <option value="m">M</option>
+                    <option value="g">G</option>
+                    <option value="gg">GG</option>
+                </select>
+            </div>
+
+            <div class="formulario__campo itemPadrao">
+                <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
+                <select id="tamUnico" class="select name="quantidade">
+                    <option value="g">G</option> 
+
+                </select>
+            </div>
+
+            <button class="btnAdionaItem" type="button">Adicionar item a minha lista</button>
+
+        </form>
+
+        <div class="formLista">
+            <h3>Lista De Solicitação.</h3>
+            <ul class="minhaLista">
+                <!--<li class="itemLista">
+                    <p class="nomeItem">camiseta</p>
+                    <p class="tamanhoItem">G</p>
+                </li>-->
+            </ul>
+            <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
         </div>
-
-        <div class="formulario__campo botina">
-            <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
-            <select id="tamBotina" class="select name="quantidade">
-                <option value=" "></option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-            </select>
-        </div>
-
-        <div class="formulario__campo tamanhoUniforme">
-            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
-            <select id="tamUniforme" class="select name="quantidade">
-                <option value=" "></option>
-                <option value="p">P</option>
-                <option value="m">M</option>
-                <option value="g">G</option>
-                <option value="gg">GG</option>
-            </select>
-        </div>
-
-        <div class="formulario__campo itemPadrao">
-            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
-            <select id="tamUnico" class="select name="quantidade">
-                <option value="g">G</option> 
-
-            </select>
-        </div>
-
-        <button class="btnAdionaItem" type="button">Adicionar item a minha lista</button>
-
-    </form>
-
-    <div class="formLista">
-        <h3>Lista De Solicitação.</h3>
-        <ul class="minhaLista">
-            <!--<li class="itemLista">
-                <p class="nomeItem">camiseta</p>
-                <p class="tamanhoItem">G</p>
-            </li>-->
-        </ul>
-        <button class="enviaSolitacao" type="submit">Enviar Solicitação</button>
     </div>
 </main>
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>

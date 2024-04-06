@@ -82,3 +82,26 @@ p.checkBox{
 input{
     margin-left: 2rem;
 }
+
+@media only screen and (max-width: 480px){
+
+    .cabecalhoItens{
+        width: 45rem;
+    }
+
+    .cabecalhoItens p.nome{
+        margin-left: 2rem;
+    }
+
+    .pedidos{
+        width: 45rem;
+    }
+
+    p.tamanho{
+        margin-left: 0rem;
+    }
+
+    p.checkBox{
+        margin-left: 2rem;
+    }
+}

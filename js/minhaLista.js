@@ -16,10 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const valorQuantItem = quantidade.value;
             const tamanhoUniformeItem = tamanhoUniforme.value;
 
-            console.log("Valor do item selecionado:", tamanhoUniformeItem); //VALOR DO ITEM
-
             var novoItemLista = document.createElement("li");
-            novoItemLista.classList.add("item");
+            novoItemLista.classList.add("itemlista");
 
             var novoitem = document.createElement("p");
             novoitem.classList.add("nomeItem");

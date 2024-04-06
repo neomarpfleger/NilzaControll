@@ -91,3 +91,38 @@ p.checkBox{
 input{
     margin-left: 2rem;
 }
+
+@media only screen and (max-width: 480px){
+
+    .CabecalhoPedidosEntregues{
+        width: 45rem;
+    }
+
+    .CabecalhoPedidosEntregues p.nome{
+        width: 7rem;
+        margin-left: 2rem;
+    }
+
+    .CabecalhoPedidosEntregues p.uniformeEPI{
+        width: 6rem;
+    }
+
+    .CabecalhoPedidosEntregues p.tamanho{
+        margin-left: 0;
+    }
+    
+    p.nome{
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+    p.tamanho{
+        width: 7rem;
+        margin-left: 2rem;
+    }
+
+    .pedidosEntregues{
+        width: 45rem;
+    }
+}
+

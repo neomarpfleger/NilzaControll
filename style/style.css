@@ -6,13 +6,13 @@
 }
 
 :root {
-    --verde:rgb(92,152,58);
-    --branco:#fff;
+    --verde:rgba(92, 152, 58, 0.418);
+    --branco:#caebeb;
     --vermelho: rgb(180,9,33)
 }
 
 .imgLogo{
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     background-color:#fff;
     border-radius: 10px;
 }
@@ -34,7 +34,7 @@ h1{
 
 #nomeSenha{
     display: flex;
-    width: 20rem;
+    width: 22rem;
     height: 20rem;
     align-items: center;
     justify-content: center;
@@ -42,10 +42,12 @@ h1{
     border: 1px solid var(--vermelho);
     flex-direction: column;
     border-radius: 20px;
+    padding-bottom: 2rem;
 }
 
 label{
     font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .inputName{
@@ -53,25 +55,29 @@ label{
     flex-direction: column;
     margin: 0.7rem;
     border-radius: 20px;
+    color: var(--branco);
 }
 
 input{
     max-width: 12rem;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin:0.5rem auto;
     border-radius: 20px;
     padding-left: 1rem;
+    background-color: var(--branco);
 }
 
 #btnLogin{
+    color: var(--branco);
     width: 10rem;
     height: 2rem;
+    font-weight: 500;
     border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #btnLogin:hover{
     cursor: pointer;
-    background-color: red;
     scale:calc(1.1);
 }
