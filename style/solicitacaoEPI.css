@@ -150,6 +150,19 @@ ul, ol {
 }
 
 @media only screen and (max-width: 480px) {
+
+    #navegacao{
+        width: 100vw;
+    }
+
+    #logoNilzaControll{
+        display: none;
+    }
+
+    #usuarioLogado{
+        display: none;
+    }
+
     .container {
         width: 100vw;
         height: 100vh;
