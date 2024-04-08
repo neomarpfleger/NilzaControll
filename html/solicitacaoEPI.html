@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <div id="navegacao">
+        <div id="navegacao" style="width: auto;">
             <ul>
                 <li class="itemNav ative">
                     <a href="#">
@@ -56,7 +56,7 @@
 
             <div class="formulario__campo uniformeOuEPI">
                 <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
-                <select id="item" class="select" name="item">
+                <select id="item" class="select" name="item" required>
                     <option value=" "></option>
                     <option value="Camiseta">Camiseta</option>
                     <option value="Camiseta longa">Camiseta longa</option>
@@ -71,8 +71,8 @@
             </div>
 
             <div class="formulario__campo botina">
-                <label class="campo__etiqueta" for="tamBotina">Selecione o tamanho da botina:</label><br>
-                <select id="tamBotina" class="select name="quantidade">
+                <label class="campo__etiqueta" for="tamBotina" >Selecione o tamanho da botina:</label><br>
+                <select id="tamBotina" class="select name="quantidade" required>
                     <option value=" "></option>
                     <option value="39">39</option>
                     <option value="40">40</option>
@@ -83,7 +83,7 @@
 
             <div class="formulario__campo tamanhoUniforme">
                 <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
-                <select id="tamUniforme" class="select" name="quantidade">
+                <select id="tamUniforme" class="select" name="quantidade" required>
                     <option value=" "></option>
                     <option value="p">P</option>
                     <option value="m">M</option>
@@ -100,7 +100,7 @@
                 </select>
             </div>
 
-            <button class="btnAdionaItem" type="button">Adicionar item a minha lista</button>
+            <button class="btnAdionaItem" type="submit">Adicionar item a minha lista</button>
 
         </form>
 

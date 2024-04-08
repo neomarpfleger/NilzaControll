@@ -150,7 +150,7 @@ body {
 @media only screen and (max-width: 480px){
 
     #navegacao {
-        width: 100vw;
+        width: 45rem;
     }
  
     #logoNilzaControll{

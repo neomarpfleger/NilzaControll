@@ -19,6 +19,10 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
         const tamanho = element.querySelector(".tamanhoItem").textContent;
         const dataSolicitacao = new Date().toLocaleDateString('pt-BR');
         const dataDeEntrega = "";
+        if(uniformeEPI == " "){
+            alert("O campo uniforme/EPI não pode estar vazio favor peencher")
+            location.reload();
+        }
         try {
             // Adiciona um documento à coleção 'uniformeEPI' do Firestore
             await db.collection('uniformeEPI').add({
@@ -33,6 +37,7 @@ document.querySelector('.enviaSolitacao').addEventListener('click', async () => 
             console.error('Erro ao enviar solicitação:', error);
             alert('Erro ao enviar solicitação. Verifique o console para mais detalhes.');
         }
+        location.reload();
     });
 });
 

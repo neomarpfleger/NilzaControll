@@ -20,7 +20,7 @@
 
 #bemVindoUsuario{
     position: relative;
-    margin: 5rem auto 10rem;
+    margin: 3rem auto 4rem;
 }
 
 .background {
@@ -113,26 +113,16 @@ ul, ol {
     margin-right: 1rem;
 }
 
-/*li{
-    display: flex;
-    border: 1px solid white;
-    width: 10rem;
-    height: 1.5rem;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 10px;
-    margin: 0.5rem;
-}*/
 
 .itemLista p {
     margin: auto;
 }
 
 .enviaSolitacao {
-    width: 15rem;
-    height: 2.5rem;
+    width: 12rem;
+    height: 2rem;
     margin: 1rem auto 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 20px;
 }
 
