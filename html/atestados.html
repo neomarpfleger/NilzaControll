@@ -54,6 +54,25 @@
             </div>
         </div>
     </header>
+    <main>
+        <div class=" ">
+            <label class="" for="colaborador">Selecione o colaborador:</label><br>
+            <select id="colaborador" class="select" name="colaborador" required>
+                <option value=" "></option>
+                <option value="Colaborador01">Colaborador01</option>
+                <option value="Colaborador02">Colaborador02</option>
+                <option value="Colaborador03">Colaborador03</option>
+            </select>
+        </div>
+    </main>
     <script src="../js/header.js"></script>
+
+    <script>const nomeUsuario = localStorage.getItem('nomeUsuarioLogado');
+        if (nomeUsuario) {
+            const nomeFormatado = nomeUsuario.charAt(0).toUpperCase() + nomeUsuario.slice(1);
+            document.getElementById("nomeUsuarioLogado").textContent = `${nomeFormatado}`;
+            document.getElementById("bemVindoUsuario").textContent = `Bem Vindo(a) ${nomeFormatado}!`;
+        }
+    </script>
 </body>
 </html>

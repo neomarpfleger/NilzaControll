@@ -30,7 +30,7 @@ body {
 
 #navegacao ul {
     display: flex;
-    width: 15rem;
+    width: auto;
     margin-left: 2rem;
 }
 
