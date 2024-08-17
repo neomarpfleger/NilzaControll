@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/atestados.css">
 </head>
 <body>
     <header>
@@ -72,18 +73,32 @@
                 <input type="text" id="dataTermino" name="dataTermino" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
             </div>
             
-            <div>
-                <label for="imageUpload">Carregar imagem do atestado:</label>
-                <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
-            </div>
-            <!-- Botão para abrir a câmera -->
-            <div>
-                <label for="cameraCapture">Ou capture uma imagem com a câmera:</label><br>
-                <input type="file" id="cameraCapture" name="cameraCapture" accept="image/*" capture="environment" required>
-            </div>
-        </div>
+            <section class="formulario">
+                <div class="formulario__container">
+                    <img src="../img/status-2.png" alt="Etapa dois de três" class="formulario__etapas">
+                    <h2 class="formulario__titulo-texto">Reconhecimento facial</h2>
+                    <p class="formulario__texto">Clique no quadro abaixo para capturarmos uma imagem sua!</p>
+    
+                    <img src="../imagens/reconhecimento.png" alt="Rosto com olhos e um sorriso dentro de um enquadramento"
+                        data-video-botao class="formulario__imagem">
+    
+                    <div class="formulario__camera" data-camera>
+                        <video width="320" height="240" autoplay data-video></video>
+                        <button class='camera__botao' data-tirar-foto>Tirar foto</button>
+                    </div>
+    
+                    <div class="formulario__mensagem" data-mensagem>
+                        <canvas width="320" height="240" data-video-canvas></canvas>
+                        <p><i class="fa-solid fa-circle-check"></i></p>
+                        <p>Prontinho, imagem capturada!</p>
+    
+                        <a href="#" class="formulario__botao formulario__botao--ancora" data-enviar>Quero abrir minha conta!</a>
+                    </div>
+                </div>
+            </section>
     </main>    
     <script src="../js/header.js"></script>
+    <script type="module" src="../js/camera.js"></script>
 
     <script>const nomeUsuario = localStorage.getItem('nomeUsuarioLogado');
         if (nomeUsuario) {
