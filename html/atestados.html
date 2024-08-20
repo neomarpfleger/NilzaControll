@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/atestados.css">
+
 </head>
 <body>
     <header>
@@ -56,7 +57,7 @@
         </div>
     </header>
     <main>
-        <div>
+        <div id="container">
             <label for="colaborador">Selecione o colaborador:</label><br>
             <select id="colaborador" class="select" name="colaborador" required>
                 <option value=""></option>
@@ -73,11 +74,9 @@
                 <input type="text" id="dataTermino" name="dataTermino" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
             </div>
             
-            <section class="formulario">
                 <div class="formulario__container">
-                    <img src="../img/status-2.png" alt="Etapa dois de três" class="formulario__etapas">
-                    <h2 class="formulario__titulo-texto">Reconhecimento facial</h2>
-                    <p class="formulario__texto">Clique no quadro abaixo para capturarmos uma imagem sua!</p>
+                    <h2 class="formulario__titulo-texto">Bater foto do atestado</h2>
+                    <p class="formulario__texto">Clique no quadro abaixo para capturar imagem do atestado!</p>
     
                     <img src="../imagens/reconhecimento.png" alt="Rosto com olhos e um sorriso dentro de um enquadramento"
                         data-video-botao class="formulario__imagem">
@@ -92,20 +91,30 @@
                         <p><i class="fa-solid fa-circle-check"></i></p>
                         <p>Prontinho, imagem capturada!</p>
     
-                        <a href="#" class="formulario__botao formulario__botao--ancora" data-enviar>Quero abrir minha conta!</a>
+                        <a href="#" class="formulario__botao formulario__botao--ancora" data-enviar>Enviar Atestado</a>
                     </div>
                 </div>
             </section>
-    </main>    
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    
     <script src="../js/header.js"></script>
     <script type="module" src="../js/camera.js"></script>
+    <script type="module" src="../js/registraImagem.js"></script>
 
-    <script>const nomeUsuario = localStorage.getItem('nomeUsuarioLogado');
-        if (nomeUsuario) {
-            const nomeFormatado = nomeUsuario.charAt(0).toUpperCase() + nomeUsuario.slice(1);
-            document.getElementById("nomeUsuarioLogado").textContent = `${nomeFormatado}`;
-            document.getElementById("bemVindoUsuario").textContent = `Bem Vindo(a) ${nomeFormatado}!`;
-        }
-    </script>
+    <!--rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}-->
+    
 </body>
 </html>
