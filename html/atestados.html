@@ -58,22 +58,32 @@
     </header>
     <main>
         <div id="container">
-            <label for="colaborador">Selecione o colaborador:</label><br>
-            <select id="colaborador" class="select" name="colaborador" required>
-                <option value=""></option>
-                <option value="Colaborador01">Colaborador01</option>
-                <option value="Colaborador02">Colaborador02</option>
-                <option value="Colaborador03">Colaborador03</option>
-            </select>
+            <div>
+                <label for="colaborador">Selecione o colaborador:</label><br>
+                <select id="colaborador" class="select" name="colaborador" required>
+                    <option value=""></option>
+                    <option value="Colaborador01">Colaborador01</option>
+                    <option value="Colaborador02">Colaborador02</option>
+                    <option value="Colaborador03">Colaborador03</option>
+                </select>
+            </div>
             <div>
                 <label for="dataInicio">Data Início:</label>
-                <input type="text" id="dataInicio" name="dataInicio" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
+                <input name="aniversario" id="dataInicio" type="date" required/>
             </div>
             <div>
                 <label for="dataTermino">Data Término:</label>
-                <input type="text" id="dataTermino" name="dataTermino" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
+                <input id="dataTermino" name="dataTermino" type="date" required>
             </div>
+            <form>
+                <label for="photoUpload">Selecione uma foto:</label>
+                <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+                <button type="submit" id="upLoadArquivo">Enviar Foto</button>
+            </form>
             
+            
+            
+              
             <section class="Captura">
                 <div class="formulario__container">
                     <h2 class="formulario__titulo-texto">Bater foto do atestado</h2>
@@ -104,7 +114,10 @@
     <script type="module" src="../js/camera.js"></script>
     <script type="module" src="../js/registraImagem.js"></script>
 
-    <!--rules_version = '2';
+<!--
+
+Codigo do firebase
+rules_version = '2';
 
 // Craft rules based on data in your Firestore database
 // allow write: if firestore.get(

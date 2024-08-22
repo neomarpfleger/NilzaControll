@@ -5,11 +5,17 @@
     justify-content: center;
     margin: 1rem 0;
     color: white;
+    gap: 2rem;
+}
+
+#dataInicio, #dataTermino {
+    border-radius: 15px;
+    padding: 0 0.5rem;
 }
 
 .Captura {
     color: white;
-    margin: 3em auto;
+    margin: 1em auto;
     width: 30vw;
 }
 
@@ -61,4 +67,10 @@
     color: rgb(8, 189, 8);
     font-size:5rem;
     margin: 1rem;
+}
+
+#upLoadArquivo {
+    padding: 0rem 0.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
 }

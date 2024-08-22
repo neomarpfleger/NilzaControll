@@ -48,9 +48,72 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             
             alert("Atestado registrado com sucesso!");
+
+            const mensagem = document.querySelector("[data-mensagem]");
+            mensagem.style.display = "none";
+
+            const botaoIniciarCamera = document.querySelector("[data-video-botao]");
+            botaoIniciarCamera.style.display = "block"
         } catch (error) {
             console.error("Erro ao registrar atestado: ", error);
             alert("Erro ao registrar atestado, tente novamente.");
         }
     });
 });
+
+
+
+const upLoadArquivo = document.querySelector("#upLoadArquivo");
+const uniformeEPIRef = collection(db, 'registraAtestado');
+
+upLoadArquivo.addEventListener('click', async () => {
+    const fileInput = document.querySelector("#photoUpload");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("Por favor, selecione uma foto para enviar.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    
+    reader.onload = async function () {
+        const dataUrl = reader.result; // Obtem a imagem como Base64
+
+        // Cria uma referência de storage para a imagem
+        const storageRef = ref(storage, 'atestado/' + Date.now() + '.png');
+
+        try {
+            // Faz o upload da imagem para o Firebase Storage
+            const snapshot = await uploadString(storageRef, dataUrl, 'data_url');
+            
+            // Obtém a URL de download da imagem
+            const downloadURL = await getDownloadURL(snapshot.ref);
+            
+            // Salva os dados no Firestore com a URL da imagem
+            await addDoc(uniformeEPIRef, {
+                colaborador: document.querySelector("#colaborador").value.trim(),
+                dataInicio: document.querySelector("#dataInicio").value.trim(),
+                dataTermino: document.querySelector("#dataTermino").value.trim(),
+                atestadoUrl: downloadURL,
+                timestamp: serverTimestamp()
+            });
+
+            alert("Atestado registrado com sucesso!");
+
+            // Limpa o campo de seleção de arquivo após o sucesso
+            fileInput.value = '';
+        } catch (error) {
+            console.error("Erro ao registrar atestado: ", error);
+            alert("Erro ao registrar atestado, tente novamente.");
+        }
+    };
+
+    reader.onerror = function (error) {
+        console.error("Erro ao ler o arquivo: ", error);
+        alert("Erro ao ler o arquivo. Por favor, tente novamente.");
+    };
+});
+
+  
