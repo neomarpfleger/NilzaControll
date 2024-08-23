@@ -69,7 +69,26 @@
     margin: 1rem;
 }
 
+#selectColaborador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+#SelectArquivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+#photoUpload {
+    margin: 1rem;
+}
+
 #upLoadArquivo {
+    display: none;
     padding: 0rem 0.5rem;
     margin-left: 1rem;
     cursor: pointer;

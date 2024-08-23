@@ -58,7 +58,7 @@
     </header>
     <main>
         <div id="container">
-            <div>
+            <div id="selectColaborador">
                 <label for="colaborador">Selecione o colaborador:</label><br>
                 <select id="colaborador" class="select" name="colaborador" required>
                     <option value=""></option>
@@ -75,12 +75,11 @@
                 <label for="dataTermino">Data Término:</label>
                 <input id="dataTermino" name="dataTermino" type="date" required>
             </div>
-            <form>
+            <form method="POST" enctype="multipart/form-data" id="SelectArquivo">
                 <label for="photoUpload">Selecione uma foto:</label>
                 <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
-                <button type="submit" id="upLoadArquivo">Enviar Foto</button>
-            </form>
-            
+                <button type="button" id="upLoadArquivo">Enviar Arquivo</button>
+            </form>            
             
             
               
