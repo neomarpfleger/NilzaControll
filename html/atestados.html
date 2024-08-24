@@ -75,15 +75,19 @@
                 <label for="dataTermino">Data Término:</label>
                 <input id="dataTermino" name="dataTermino" type="date" required>
             </div>
+
+            <div id="selectUpLoad">
+                <button type="button" class="btnSelectArquivo">Selecionar Arquivo</button>
+                <button type="button" class="btnCaptura">Tirar Foto</button>
+            </div>
+
             <form method="POST" enctype="multipart/form-data" id="SelectArquivo">
                 <label for="photoUpload">Selecione uma foto:</label>
                 <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
                 <button type="button" id="upLoadArquivo">Enviar Arquivo</button>
-            </form>            
-            
-            
+            </form>
               
-            <section class="Captura">
+            <section id="Captura">
                 <div class="formulario__container">
                     <h2 class="formulario__titulo-texto">Bater foto do atestado</h2>
                     <p class="formulario__texto">Clique no quadro abaixo para capturar imagem do atestado!</p>
@@ -112,6 +116,7 @@
     <script src="../js/header.js"></script>
     <script type="module" src="../js/camera.js"></script>
     <script type="module" src="../js/registraImagem.js"></script>
+    <script type="module" src="../js/selecionaUpLoad.js"></script>
 
 <!--
 
