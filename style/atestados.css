@@ -17,11 +17,10 @@
     display: none;
     color: white;
     margin: 1em auto;
-    width: 30vw;
 }
 
 .formulario__container {
-    margin: 3em 0;
+    margin: 1em 0;
     text-align: center;
 }
 
@@ -30,24 +29,27 @@
 }
 
 .formulario__titulo-texto {
-    margin: 1em 0;
     font-weight: 600;
     font-size: 28px;
     line-height: 34px;
 }
 
 .formulario__texto {
-    margin: 1em 8em;
+    margin: 1em auto;
 }
 
 .formulario__imagem {
     display: block;
-    margin: 2em auto;
+    margin: 0.5em auto;
 }
 
 .formulario__mensagem,
 .formulario__camera {
     display: none;
+}
+
+.formulario__container i {
+    font-size: 5rem;
 }
 
 .formulario__botao,
@@ -75,6 +77,7 @@
     flex-direction: column;
     align-items: center;
     gap: 3px;
+    margin-top: 2em;
 }
 
 #selectUpLoad {
@@ -85,10 +88,21 @@
 
 }
 
-
 .btnSelectArquivo, .btnCaptura {
-    width: 50%;
+    width: 20%;
     height: auto;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 15px;
+    border: 0.1 solid white;
+    margin: 0.2rem;
+}
+
+.btnSelecionado {
+    background-color: rgb(92,152,58);
 }
 
 #SelectArquivo {
@@ -102,9 +116,23 @@
     margin: 1rem;
 }
 
+.photoUpload {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    margin-top: 2.2rem;
+}
+
 #upLoadArquivo {
     display: none;
     padding: 0rem 0.5rem;
     margin-left: 1rem;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 480px){
+
+    .btnSelectArquivo, .btnCaptura {
+        width: 50%;
+    }
 }

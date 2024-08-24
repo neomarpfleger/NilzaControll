@@ -82,26 +82,24 @@
             </div>
 
             <form method="POST" enctype="multipart/form-data" id="SelectArquivo">
-                <label for="photoUpload">Selecione uma foto:</label>
+                <label for="photoUpload" class="photoUpload">Selecione uma foto:</label>
                 <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
                 <button type="button" id="upLoadArquivo">Enviar Arquivo</button>
             </form>
               
             <section id="Captura">
                 <div class="formulario__container">
-                    <h2 class="formulario__titulo-texto">Bater foto do atestado</h2>
-                    <p class="formulario__texto">Clique no quadro abaixo para capturar imagem do atestado!</p>
+                    <h2 class="formulario__titulo-texto">Registar Atestado</h2>
+                    <p class="formulario__texto">Clique na imagem abaixo para começar!</p>
     
-                    <img src="../imagens/reconhecimento.png" alt="Rosto com olhos e um sorriso dentro de um enquadramento"
-                        data-video-botao class="formulario__imagem">
-    
+                    <i class="fa-regular fa-image formulario__imagem" data-video-botao></i>
                     <div class="formulario__camera" data-camera>
                         <video width="320" height="240" autoplay data-video></video>
                         <button class='camera__botao' data-tirar-foto>Tirar foto</button>
                     </div>
     
                     <div class="formulario__mensagem" data-mensagem>
-                        <canvas width="320" height="240" data-video-canvas></canvas>
+                        <canvas width="240" height="320" data-video-canvas></canvas>
                         <p><i class="fa-solid fa-circle-check"></i></p>
                         <p>Prontinho, imagem capturada!</p>
     

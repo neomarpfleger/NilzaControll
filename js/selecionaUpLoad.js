@@ -1,17 +1,25 @@
-document.querySelector(".btnSelectArquivo").addEventListener("click", function() {
+// Função genérica para alternar exibição e classes dos botões
+function toggleButtons(activeButton, inactiveButton, showElement, hideElement) {
+    // Alterar a exibição dos elementos
+    document.getElementById(showElement).style.display = 'flex';
+    document.getElementById(hideElement).style.display = 'none';
 
-    const Captura = document.getElementById("Captura");
-    Captura.style.display = 'none';
+    // Adicionar a classe 'btnSelecionado' ao botão ativo
+    activeButton.classList.add('btnSelecionado');
+    // Remover a classe 'btnSelecionado' do botão inativo
+    inactiveButton.classList.remove('btnSelecionado');
+}
 
-    const SelectArquivo = document.getElementById("SelectArquivo");
-    SelectArquivo.style.display = 'flex';
+// Referências aos botões
+const btnSelectArquivo = document.querySelector(".btnSelectArquivo");
+const btnCaptura = document.querySelector(".btnCaptura");
+
+// Evento de clique no botão "Selecionar Arquivo"
+btnSelectArquivo.addEventListener("click", function() {
+    toggleButtons(btnSelectArquivo, btnCaptura, 'SelectArquivo', 'Captura');
 });
 
-document.querySelector(".btnCaptura").addEventListener("click", function() {
-
-    const SelectArquivo = document.getElementById("SelectArquivo");
-    SelectArquivo.style.display = 'none';
-
-    const Captura = document.getElementById("Captura");
-    Captura.style.display = 'block';
+// Evento de clique no botão "Captura"
+btnCaptura.addEventListener("click", function() {
+    toggleButtons(btnCaptura, btnSelectArquivo, 'Captura', 'SelectArquivo');
 });
