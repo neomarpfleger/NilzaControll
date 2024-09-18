@@ -1,3 +1,6 @@
+import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
+import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -10,23 +13,23 @@ const firebaseConfig = {
     measurementId: "G-TM623T80R8"
 };
 
-
 // Inicializa o Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
 async function listaDeEpis() {
-    const uniformeEPIRef = db.collection('uniformeEPI');
-    const snapshot = await uniformeEPIRef.get();
+    const uniformeEPIRef = db.collection('atestado/');
+    const snapshot = await AtestadoRef.get();
     const conexaoConvertida = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-    const listaParaSeparar = document.querySelector(".listaParaSeparar");
+    const listaParaSeparar = document.querySelector(".consultaAtestados");
 
-    conexaoConvertida.forEach(epi => {
-        if (!epi.dataDeEntrega) {
-            const item = constroiItem(epi.id, epi.nomeUsuario, epi.uniformeEPI, epi.tamanho, epi.dataSolicitacao, epi.dataDeEntrega);
-            listaParaSeparar.appendChild(item);
-        }
+    conexaoConvertida.forEach(atestado => {
+
+        const  = constroiItem(epi.id, epi.nomeUsuario, epi.uniformeEPI, epi.tamanho, epi.dataSolicitacao, epi.dataDeEntrega);
+        listaParaSeparar.appendChild(item);
+        
     });
 
     // Adiciona o evento de escuta após adicionar os itens à lista
