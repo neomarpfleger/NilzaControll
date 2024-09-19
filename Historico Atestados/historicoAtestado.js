@@ -1,6 +1,6 @@
 import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
+import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -19,60 +19,30 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 async function listaDeEpis() {
-    const uniformeEPIRef = db.collection('atestado/');
-    const snapshot = await AtestadoRef.get();
+    const AtestadoRef = collection(db, 'registraAtestado');
+    const snapshot = await getDocs(AtestadoRef);
     const conexaoConvertida = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
     const listaParaSeparar = document.querySelector(".consultaAtestados");
 
     conexaoConvertida.forEach(atestado => {
-
-        const  = constroiItem(epi.id, epi.nomeUsuario, epi.uniformeEPI, epi.tamanho, epi.dataSolicitacao, epi.dataDeEntrega);
-        listaParaSeparar.appendChild(item);
-        
-    });
-
-    // Adiciona o evento de escuta após adicionar os itens à lista
-    document.querySelectorAll(".pedidos input[type='checkbox']").forEach(checkbox => {
-        checkbox.addEventListener('change', function(e) {
-            if (e.target.checked) {
-                const id = e.target.parentElement.dataset.id;
-                const today = new Date().toLocaleDateString('pt-BR');
-
-                const itemAtualizado = {
-                    ...conexaoConvertida.find(epi => epi.id === id),
-                    dataDeEntrega: today
-                };
-
-                // Atualiza o documento no Firestore
-                uniformeEPIRef.doc(id).update(itemAtualizado).then(() => {
-                    console.log('Data de entrega atualizada com sucesso:', itemAtualizado);
-                }).catch(error => {
-                    console.error('Erro ao atualizar data de entrega:', error);
-                });
-            }
-        });
+        const dadosDoAtestado = constroiItem(atestado.colaborador, atestado.atestadoUrl, atestado.dataInicio, atestado.dataTermino);
+        listaParaSeparar.appendChild(dadosDoAtestado);
     });
 
     return conexaoConvertida;
 }
 
-function constroiItem(id, nome, uniformeEPI, tamanho, data, dataDeEntrega) {
-    const itemEmSeparacao = document.createElement("li");
-    itemEmSeparacao.className = "pedidos";
-    itemEmSeparacao.dataset.id = id;
-    itemEmSeparacao.innerHTML = 
-                                `<p class="nome">${nome}</p>
-                                <p class="uniformeEPI">${uniformeEPI}</p>
-                                <p class="tamanho">${tamanho}</p>
-                                <p class="data">${data}</p>
-                                <p class="checkBox">Confirme</p><input type="checkbox" name="" id="separacaoOK">`
-    if (dataDeEntrega) {
-        const checkbox = itemEmSeparacao.querySelector('input[type="checkbox"]');
-        checkbox.checked = true;
-    }
+function constroiItem(colaborador, atestadoUrl, dataInicio, dataTermino) {
+    const cardAtestado = document.createElement("div");
+    cardAtestado.className = "cardAtestado";
+    cardAtestado.innerHTML = 
+                                `<p>${colaborador}</p>
+                                <img src="${atestadoUrl}" alt="Imagem do atestado de ${colaborador}" srcset="">
+                                <p class="dataInicio">${dataInicio}</p>
+                                <p class="dataFinal">${dataTermino}</p>`
 
-    return itemEmSeparacao;
+    return cardAtestado;
 }
 
 listaDeEpis();
