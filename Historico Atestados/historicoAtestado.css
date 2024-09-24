@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#inputDates {
+    display: flex;
+    width: 100vw;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: aquamarine;
+    flex-wrap: wrap;
+}
+
+#inputDates, #inicioDaBusca, #finalDaBusca {
+    border: none;
+    padding: 0 0.5rem;
+    border-radius: 15px;
+}
+
+#inputDates button {
+    width: 10rem;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 10px;
+}
+
+#consultaAtestados {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.cardAtestado {
+    background-color: aquamarine;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.imgAtestado {
+    width: 18rem;
+    height: 22rem;
+}

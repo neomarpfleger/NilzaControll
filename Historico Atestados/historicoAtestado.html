@@ -4,35 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico De Atestados</title>
+
+    <link rel="stylesheet" href="./historicoAtestado.css">
 </head>
 <body>
     <section>
-        <select name="mesConsultaAtestado" id="mesConsultaAtestado">
-            <option value="" class="mesConsultaAtestado"></option>
-            <option value="Janeiro" class="mesConsultaAtestado">Janeiro</option>
-            <option value="Fevereiro" class="mesConsultaAtestado">Fevereiro</option>
-            <option value="Março" class="mesConsultaAtestado">Março</option>
-            <option value="Abril" class="mesConsultaAtestado">Abril</option>
-            <option value="Maio" class="mesConsultaAtestado">Maio</option>
-            <option value="Junho" class="mesConsultaAtestado">Junho</option>
-            <option value="Julho" class="mesConsultaAtestado">Julho</option>
-            <option value="Agosto" class="mesConsultaAtestado">Agosto</option>
-            <option value="Setembro" class="mesConsultaAtestado">Setembro</option>
-            <option value="Outubro" class="mesConsultaAtestado">Outubro</option>
-            <option value="Novembro" class="mesConsultaAtestado">Novembro</option>
-            <option value="Dezembro" class="mesConsultaAtestado">Dezembro</option>
-        </select>
-        <select name="anoConsultaAtestado">
-            <option value="2024">2024</option>
-        </select>
-        <button type="button">Consultar Atestados</button>
+        <div id="inputDates">
+            <input type="date" name="inicioDaBusca" id="inicioDaBusca">
+            <input type="date" name="finalDaBusca" id="finalDaBusca">
+            <button type="button" id="btnConsultar">Consultar Atestados</button>
+            <button type="button" id="btnVoltar">Voltar</button>
+        </div>
     </section>
-    <section class="consultaAtestados">
-        <div class="cardAtestado">
-            <img src="" alt="" srcset="">
-            <p class="dataInicio">123456</p>
-            <p class="dataFinal">123456</p>
-            <p>Nome</p>
+    <section >
+        <div id="consultaAtestados">
+            <!-- Remova o div de exemplo se não for necessário -->
         </div>
     </section>
     <script type="module" src="./historicoAtestado.js"></script>

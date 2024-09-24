@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Função para fazer upload e registrar no Firestore
+/*// Função para fazer upload e registrar no Firestore
 async function uploadAndRegister(dataUrl) {
     const storageRef = ref(storage, 'atestado/' + Date.now() + '.png');
 
@@ -40,6 +40,55 @@ async function uploadAndRegister(dataUrl) {
     } catch (error) {
         console.error("Erro ao registrar atestado: ", error);
         alert("Erro ao registrar atestado, tente novamente.");
+    }
+}*/
+
+
+// Função para fazer upload e registrar no Firestore
+async function uploadAndRegister(dataUrl) {
+    const storageRef = ref(storage, 'atestado/' + Date.now() + '.png');
+
+    // Verificação de campos obrigatórios
+    const colaborador = document.querySelector("#colaborador").value.trim();
+    const dataInicio = document.querySelector("#dataInicio").value.trim();
+    const dataTermino = document.querySelector("#dataTermino").value.trim();
+
+    if (!colaborador || !dataInicio || !dataTermino) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    try {
+        // Exibir loader
+        document.querySelector("#loader").style.display = "block";
+
+        // Faz o upload da imagem para o Firebase Storage
+        const snapshot = await uploadString(storageRef, dataUrl, 'data_url');
+        const downloadURL = await getDownloadURL(snapshot.ref);
+
+        // Salva os dados no Firestore com a URL da imagem
+        await addDoc(collection(db, 'registraAtestado'), {
+            colaborador: colaborador,
+            dataInicio: dataInicio,
+            dataTermino: dataTermino,
+            atestadoUrl: downloadURL,
+            timestamp: serverTimestamp()
+        });
+
+        alert("Atestado registrado com sucesso!");
+        return downloadURL; // Retorna a URL da imagem para uso futuro, se necessário.
+    } catch (error) {
+        if (error.code === 'storage/unauthorized') {
+            alert("Você não tem permissão para realizar essa operação.");
+        } else if (error.code === 'storage/canceled') {
+            alert("Upload cancelado.");
+        } else {
+            alert("Erro ao registrar atestado, tente novamente.");
+        }
+        console.error("Erro ao registrar atestado: ", error);
+    } finally {
+        // Ocultar loader
+        document.querySelector("#loader").style.display = "none";
     }
 }
 

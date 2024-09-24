@@ -88,6 +88,20 @@
 
 }
 
+#btnHistoricoDeAtestados {
+    width: 15%;
+    height: auto;
+    margin-right: 70%;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 15px;
+    border: 0.1 solid white;
+    margin: 1rem;
+}
+
 .btnSelectArquivo, .btnCaptura {
     width: 20%;
     height: auto;

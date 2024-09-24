@@ -1,0 +1,14 @@
+
+:root {
+    --verde:rgb(92,152,58);
+    --branco:#fff;
+    --vermelho: rgb(180,9,33)
+}
+
+.CabecalhoPedidosEntregues {
+    color: var(--verde);
+}
+
+.pedidosEntregues {
+    color: var(--verde);
+}

@@ -23,3 +23,10 @@ btnSelectArquivo.addEventListener("click", function() {
 btnCaptura.addEventListener("click", function() {
     toggleButtons(btnCaptura, btnSelectArquivo, 'Captura', 'SelectArquivo');
 });
+
+
+//Btn que direciona para a Pagina de historico de astados
+const btnHistoricoDeAtestados = document.getElementById("btnHistoricoDeAtestados");
+btnHistoricoDeAtestados.addEventListener("click", ()=> {
+    window.location.href = ("../Historico Atestados/historicoAtestado.html")
+})
