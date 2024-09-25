@@ -1,6 +1,10 @@
-import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
+import { getStorage, ref } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
+import { deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
+import { deleteObject } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
+
+
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -20,9 +24,9 @@ const storage = getStorage(app);
 
 // Função para formatar datas no formato dd/mm/aaaa
 function formataData(data) {
-    const dataObj = new Date(data + 'T00:00:00'); // Adiciona 'T00:00:00' para garantir que seja interpretado como o dia correto
-    const dia = String(dataObj.getDate()).padStart(2, '0'); // Adiciona zero à esquerda se necessário
-    const mes = String(dataObj.getMonth() + 1).padStart(2, '0'); // Os meses são baseados em zero, então adicionamos 1
+    const dataObj = new Date(data + 'T00:00:00');
+    const dia = String(dataObj.getDate()).padStart(2, '0');
+    const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
     const ano = dataObj.getFullYear();
     return `${dia}/${mes}/${ano}`;
 }
@@ -39,14 +43,40 @@ async function listaDeAtestados() {
     }
 }
 
-function constroiItem(colaborador, atestadoUrl, dataInicio, dataTermino) {
+function constroiItem(colaborador, atestadoUrl, dataInicio, dataTermino, id) {
     const cardAtestado = document.createElement("div");
     cardAtestado.className = "cardAtestado";
     cardAtestado.innerHTML = `
         <p>${colaborador}</p>
-        <img class="imgAtestado" src="${atestadoUrl}" alt="Imagem do atestado de ${colaborador}" srcset="">
+        <img class="imgAtestado" src="${atestadoUrl}" alt="Imagem do atestado de ${colaborador}">
         <p class="dataInicio">${formataData(dataInicio)}</p>
-        <p class="dataFinal">${formataData(dataTermino)}</p>`;
+        <p class="dataFinal">${formataData(dataTermino)}</p>
+        <i class="btnExcluirProjeto fa-solid fa-trash-can"${id}"></i>`;
+
+    // Adicionar evento ao botão de exclusão
+    const btnExcluirProjeto = cardAtestado.querySelector('.btnExcluirProjeto');
+    btnExcluirProjeto.addEventListener('click', async () => {
+        const confirmacao = confirm(`Tem certeza que deseja excluir o atestado de ${colaborador}?`);
+        if (confirmacao) {
+            try {
+                // Deletar o documento do Firestore
+                const atestadoDocRef = doc(db, 'registraAtestado', id); // Usando o id passado como argumento
+                await deleteDoc(atestadoDocRef);
+
+                // Deletar a imagem do Firebase Storage
+                const storageRef = ref(storage, atestadoUrl); // 'atestadoUrl' é a URL da imagem
+                await deleteObject(storageRef);
+
+                alert('Atestado e imagem excluídos com sucesso!');
+                
+                // Remover o card da interface
+                cardAtestado.remove();
+            } catch (error) {
+                console.error("Erro ao excluir o atestado ou imagem: ", error);
+                alert('Erro ao excluir o atestado ou imagem.');
+            }
+        }
+    });
 
     return cardAtestado;
 }
@@ -62,11 +92,11 @@ document.querySelector('#btnConsultar').addEventListener('click', async () => {
 
     try {
         const atestados = await listaDeAtestados();
-        const dataInicioBusca = new Date(inicioDaBusca + 'T00:00:00'); // Garante que a data seja interpretada corretamente
-        const dataFinalBusca = new Date(finalDaBusca + 'T23:59:59'); // Inclui o último dia completo no filtro
+        const dataInicioBusca = new Date(inicioDaBusca + 'T00:00:00');
+        const dataFinalBusca = new Date(finalDaBusca + 'T23:59:59');
 
         const atestadosFiltrados = atestados.filter(atestado => {
-            const dataInicioAtestado = new Date(atestado.dataInicio + 'T00:00:00'); // Ajuste para evitar fuso horário
+            const dataInicioAtestado = new Date(atestado.dataInicio + 'T00:00:00');
             return dataInicioAtestado >= dataInicioBusca && dataInicioAtestado <= dataFinalBusca;
         });
 
@@ -74,7 +104,7 @@ document.querySelector('#btnConsultar').addEventListener('click', async () => {
         listaParaSeparar.innerHTML = '';
 
         atestadosFiltrados.forEach(atestado => {
-            const dadosDoAtestado = constroiItem(atestado.colaborador, atestado.atestadoUrl, atestado.dataInicio, atestado.dataTermino);
+            const dadosDoAtestado = constroiItem(atestado.colaborador, atestado.atestadoUrl, atestado.dataInicio, atestado.dataTermino, atestado.id);
             listaParaSeparar.appendChild(dadosDoAtestado);
         });
     } catch (error) {
@@ -86,7 +116,3 @@ const btnVoltar = document.getElementById("btnVoltar");
 btnVoltar.addEventListener("click", () => {
     window.location = "../html/atestados.html";
 });
-
-
-// Remova esta chamada se não precisar carregar todos os atestados no início
-// listaDeAtestados();
