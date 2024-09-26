@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-/*// Função para fazer upload e registrar no Firestore
+// Função para fazer upload e registrar no Firestore
 async function uploadAndRegister(dataUrl) {
     const storageRef = ref(storage, 'atestado/' + Date.now() + '.png');
 
@@ -41,10 +41,10 @@ async function uploadAndRegister(dataUrl) {
         console.error("Erro ao registrar atestado: ", error);
         alert("Erro ao registrar atestado, tente novamente.");
     }
-}*/
+}
 
 
-// Função para fazer upload e registrar no Firestore
+/*// Função para fazer upload e registrar no Firestore
 async function uploadAndRegister(dataUrl) {
     const storageRef = ref(storage, 'atestado/' + Date.now() + '.png');
 
@@ -90,7 +90,7 @@ async function uploadAndRegister(dataUrl) {
         // Ocultar loader
         document.querySelector("#loader").style.display = "none";
     }
-}
+}*/
 
 // Evento de clique para capturar imagem do canvas
 document.addEventListener("DOMContentLoaded", function() {
