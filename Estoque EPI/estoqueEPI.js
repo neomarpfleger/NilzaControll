@@ -25,7 +25,7 @@ async function listaEPI() {
     const listaDeEPI = document.querySelector(".listaDeEPI");
 
     conexaoConvertida.forEach(epi => {
-        const itemEPI = constroiItem(epi.item, epi.estoque, epi.estoqueMinimo);
+        const itemEPI = constroiItem(epi.item, epi.tamanho, epi.estoque, epi.estoqueMinimo);
         listaDeEPI.appendChild(itemEPI);
     });
 
@@ -33,14 +33,16 @@ async function listaEPI() {
 }
 
 // Função para construir o item de EPI
-function constroiItem(item, estoque, estoqueMinimo) {
-    const listaDeEPI = document.createElement("li");
+function constroiItem(item, tamanho, estoque, estoqueMinimo) {
+    const listaDeEPI = document.createElement("tr");
     listaDeEPI.className = "pedidosEntregues";
     listaDeEPI.innerHTML =
-        `<p class="nome">${item}</p>
-        <p class="uniformeEPI">${estoque}</p>
-        <p class="tamanho">${estoqueMinimo}</p>`;
-
+                            `
+                            <td>${item}</td>
+                            <td>${tamanho}</td>
+                            <td>${estoque}</td>
+                            <td>${estoqueMinimo}</td>
+                            `
     return listaDeEPI;
 }
 
