@@ -78,7 +78,7 @@
             <label for="estoqueMinimo">Estoque Minimo</label>
             <input id="estoqueMinimo" type="text" required>
 
-            <button type="submit">Criar Item</button>
+            <button id="CriarEPI" type="submit">Criar Item</button>
         </div>
         <table>
             <thead>
@@ -87,16 +87,20 @@
                     <th>Tamanho</th>
                     <th>Estoque</th>
                     <th>Estoque Minimo</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody class="listaDeEPI"></tbody>
         </table>
     </main>
 
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
 
     <script type="module" src="./estoqueEPI.js"></script>
+    <script type="module" src="./AdicionaEPI.js"></script>
     <script src="../js/header.js"></script>
 </body>
 </html>

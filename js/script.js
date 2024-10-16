@@ -27,6 +27,12 @@ btnLogin.addEventListener("click", async function(){
     }
 });*/
 
+window.onload = function() {
+    // Adiciona a classe 'show' ao 'nomeSenha' após 500ms
+    setTimeout(function() {
+        document.getElementById('nomeSenha').classList.add('show');
+    }, 500);
+};
 
 let nomeUsuarioLogado; // Variável global para armazenar o nome do usuário logado
 
