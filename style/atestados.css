@@ -1,11 +1,21 @@
+body {
+    background: linear-gradient(135deg,  #0f2027, #203a43,#2c5364);
+}
+
 #container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 1rem auto;
     color: white;
     gap: 2rem;
+}
+
+.inputsData {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
 }
 
 #dataInicio, #dataTermino {
@@ -75,8 +85,9 @@
 #selectColaborador {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
     gap: 3px;
+    margin: 0 auto;
 }
 
 #selectUpLoad {
@@ -110,7 +121,7 @@
     padding: 5px;
     font-size: 1em;
     border-radius: 15px;
-    border: 0.1 solid white;
+    border: none;
     margin: 0.2rem;
 }
 
@@ -146,6 +157,6 @@
 @media only screen and (max-width: 480px){
 
     .btnSelectArquivo, .btnCaptura {
-        width: 50%;
+        width: 40%;
     }
 }
