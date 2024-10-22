@@ -1,6 +1,3 @@
-import { doc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
-import { db } from './firebaseConfig.js';
-
 export default function editarItem(itemId, item, tamanho, estoque, estoqueMinimo) {
     const modal = document.createElement("div");
     modal.className = "modal";
@@ -24,7 +21,7 @@ export default function editarItem(itemId, item, tamanho, estoque, estoqueMinimo
                 <div class="inputEdicao">
                     <label for="editEstoqueMinimo">Estoque Mínimo</label>
                     <input type="number" id="editEstoqueMinimo" name="editEstoqueMinimo" value="${estoqueMinimo}" required>
-                </div>
+                <div>
                 <button type="submit">Salvar Alterações</button>
             </form>
         </div>
@@ -38,7 +35,7 @@ export default function editarItem(itemId, item, tamanho, estoque, estoqueMinimo
     const closeModal = modal.querySelector(".close");
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
-        modal.remove();
+        modal.remove(); // Remove o modal após fechar
     });
 
     window.addEventListener("click", (event) => {
@@ -48,29 +45,26 @@ export default function editarItem(itemId, item, tamanho, estoque, estoqueMinimo
         }
     });
 
-    // Submissão do formulário de edição
-    const form = modal.querySelector('#editEPIForm');
-    form.addEventListener('submit', async (event) => {
+    // Lida com o submit do formulário
+    const form = modal.querySelector("#editEPIForm");
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
+        const editedItem = form.editItem.value;
+        const editedTamanho = form.editTamanho.value;
+        const editedEstoque = form.editEstoque.value;
+        const editedEstoqueMinimo = form.editEstoqueMinimo.value;
 
-        // Pega os novos valores dos campos
-        const updatedItem = form.editItem.value;
-        const updatedTamanho = form.editTamanho.value;
-        const updatedEstoque = form.editEstoque.value;
-        const updatedEstoqueMinimo = form.editEstoqueMinimo.value;
-
-        // Atualiza no Firestore
-        const epiDoc = doc(db, 'EPIs', itemId);
-        await updateDoc(epiDoc, {
-            item: updatedItem,
-            tamanho: updatedTamanho,
-            estoque: updatedEstoque,
-            estoqueMinimo: updatedEstoqueMinimo
+        console.log({
+            itemId,
+            editedItem,
+            editedTamanho,
+            editedEstoque,
+            editedEstoqueMinimo
         });
 
-        // Fecha o modal após salvar
+        // Aqui você pode fazer a chamada para o back-end ou Firebase para salvar as edições
+
         modal.style.display = "none";
-        modal.remove();
-        console.log("Item atualizado com sucesso!");
+        modal.remove(); // Remove o modal após o submit
     });
 }

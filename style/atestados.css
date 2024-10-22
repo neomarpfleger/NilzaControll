@@ -98,7 +98,7 @@ body {
 
 }
 
-#btnHistoricoDeAtestados {
+#btnHistoricoDeAtestados, #btnArquivarAtestado {
     width: auto;
     height: auto;
     margin-right: 70%;

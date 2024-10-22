@@ -65,40 +65,10 @@
         </div>
     </header>
     <main>
+        <button type="button" id="btnArquivarAtestado">Arquivar Atestado</button>
         <button type="button" id="btnHistoricoDeAtestados">Historico De Atestados</button>
         <div id="container">
-            <div id="selectColaborador">
-                <label for="colaborador">Selecione o colaborador:</label><br>
-                <select id="colaborador" class="select" name="colaborador" required>
-                    <option value=""></option>
-                    <option value="Altamir Das Dores">Altamir Das Dores</option>
-                    <option value="Dilson">Dilson</option>
-                    <option value="Ednei">Ednei</option>
-                    <option value="Neomar">Neomar</option>
-                    <option value="Wilson">Wilson</option>
-                    <option value="Renato">Renato</option>
-                    <option value="Luis Fernando">Luis Fernando</option>
-                    <option value="Valdemar">Valdemar</option>
-                    <option value="Bruno">Bruno</option>
-                    <option value="Carlos">Carlos</option>
-                    <option value="Fernando">Fernando</option>
-                    <option value="Alex">Alex</option>
-                    <option value="Sydnei">Sydnei</option>
-                    <option value="Osvaldir">Osvaldir</option>
-                    <option value="Moacir">Moacir</option>
-                    <option value="Vanderlei">Vanderlei</option>
-                    <option value="Rodrigo">Rodrigo</option>
-
-                </select>
-            </div>
-            <div class="inputsData">
-                <label for="dataInicio">Data Início:</label>
-                <input name="aniversario" id="dataInicio" type="date" required/>
-            </div>
-            <div class="inputsData">
-                <label for="dataTermino">Data Término:</label>
-                <input id="dataTermino" name="dataTermino" type="date" required>
-            </div>
+           
 
             <div id="selectUpLoad">
                 <button type="button" class="btnSelectArquivo">Selecionar Arquivo</button>
@@ -140,22 +110,6 @@
     <script type="module" src="../js/camera.js"></script>
     <script type="module" src="../js/registraImagem.js"></script>
     <script type="module" src="../js/selecionaUpLoad.js"></script>
-
-<!--
-
-Codigo do firebase
-rules_version = '2';
-
-// Craft rules based on data in your Firestore database
-// allow write: if firestore.get(
-//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read, write: if true;
-    }
-  }
-}-->
     
 </body>
 </html>

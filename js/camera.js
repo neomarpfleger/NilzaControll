@@ -64,3 +64,43 @@ botaoTirarFoto.addEventListener("click", function () {
     mensagem.style.display = "block";
 });
 
+
+
+const btnArquivarAtestado = document.getElementById("btnArquivarAtestado");
+btnArquivarAtestado.addEventListener("click", function() {
+    const container = document.getElementById("container")
+    container.innerHTML =
+                            `<div id="selectColaborador">
+                                <label for="colaborador">Selecione o colaborador:</label><br>
+                                <select id="colaborador" class="select" name="colaborador" required>
+                                    <option value=""></option>
+                                    <option value="Altamir Das Dores">Altamir Das Dores</option>
+                                    <option value="Dilson">Dilson</option>
+                                    <option value="Ednei">Ednei</option>
+                                    <option value="Neomar">Neomar</option>
+                                    <option value="Wilson">Wilson</option>
+                                    <option value="Renato">Renato</option>
+                                    <option value="Luis Fernando">Luis Fernando</option>
+                                    <option value="Valdemar">Valdemar</option>
+                                    <option value="Bruno">Bruno</option>
+                                    <option value="Carlos">Carlos</option>
+                                    <option value="Fernando">Fernando</option>
+                                    <option value="Alex">Alex</option>
+                                    <option value="Sydnei">Sydnei</option>
+                                    <option value="Osvaldir">Osvaldir</option>
+                                    <option value="Moacir">Moacir</option>
+                                    <option value="Vanderlei">Vanderlei</option>
+                                    <option value="Rodrigo">Rodrigo</option>
+
+                                </select>
+                            </div>
+                            <div class="inputsData">
+                                <label for="dataInicio">Data Início:</label>
+                                <input name="aniversario" id="dataInicio" type="date" required/>
+                            </div>
+                            <div class="inputsData">
+                                <label for="dataTermino">Data Término:</label>
+                                <input id="dataTermino" name="dataTermino" type="date" required>
+                            </div>`
+})
+
