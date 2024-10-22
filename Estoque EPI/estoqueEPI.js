@@ -1,5 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
 import { getFirestore, collection, getDocs, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
+import editarItem from './modalEdicao.js';
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -36,16 +37,19 @@ async function listaEPI() {
     return conexaoConvertida;
 }
 
-// Função para construir o item de EPI com o ícone de lixeira
+// Função para construir o item de EPI com os ícones de lixeira e lápis (edição)
 function constroiItem(id, item, tamanho, estoque, estoqueMinimo) {
     const listaDeEPI = document.createElement("tr");
     listaDeEPI.className = "pedidosEntregues";
-    listaDeEPI.innerHTML =`
+    listaDeEPI.innerHTML = `
         <td>${item}</td>
         <td>${tamanho}</td>
         <td>${estoque}</td>
         <td>${estoqueMinimo}</td>
-        <td><i class="fa-solid fa-trash-can" style="cursor:pointer;" data-id="${id}"></i></td>
+        <td>
+            <i class="fa-solid fa-trash-can" style="cursor:pointer;" data-id="${id}"></i> 
+            <i class="fa-solid fa-pencil" style="cursor:pointer;" data-id="${id}"></i>
+        </td>
     `;
 
     // Adiciona evento de clique no ícone da lixeira
@@ -59,8 +63,29 @@ function constroiItem(id, item, tamanho, estoque, estoqueMinimo) {
         listaDeEPI.remove();
     });
 
+    // Adiciona evento de clique no ícone de lápis para edição
+    listaDeEPI.querySelector(".fa-pencil").addEventListener('click', () => {
+
+        const itemId = id;
+
+        // Chama a função para editar o item
+        editarItem(itemId, item, tamanho, estoque, estoqueMinimo);
+    });
+
     return listaDeEPI;
 }
+
+/* Função para editar um item de EPI (você pode adaptar essa função conforme suas necessidades)
+function editarItem(id, item, tamanho, estoque, estoqueMinimo) {
+    // Exemplo: Abrir um modal ou exibir campos de edição no lugar dos valores atuais
+    console.log(`Editar item ID: ${id}`);
+    console.log(`Item: ${item}, Tamanho: ${tamanho}, Estoque: ${estoque}, Estoque Mínimo: ${estoqueMinimo}`);
+    
+    // Aqui você pode abrir um modal ou substituir os campos com inputs para editar
+    // Exemplo: Abrir um modal com um formulário para edição
+    // Pode incluir a chamada para o back-end para editar o item
+}*/
+
 
 // Função para excluir um item do Firestore
 async function excluirItem(id) {
