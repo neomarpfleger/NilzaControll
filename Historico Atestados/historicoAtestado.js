@@ -49,8 +49,8 @@ function constroiItem(colaborador, atestadoUrl, dataInicio, dataTermino, id) {
     cardAtestado.innerHTML = `
         <p>${colaborador}</p>
         <img class="imgAtestado" src="${atestadoUrl}" alt="Imagem do atestado de ${colaborador}">
-        <p class="dataInicio">${formataData(dataInicio)}</p>
-        <p class="dataFinal">${formataData(dataTermino)}</p>
+        <p class="dataInicio">Inicio ${formataData(dataInicio)}</p>
+        <p class="dataFinal">Final ${formataData(dataTermino)}</p>
         <i class="btnExcluirProjeto fa-solid fa-trash-can"${id}"></i>`;
 
     // Adicionar evento ao botão de exclusão
