@@ -1,3 +1,16 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+:root {
+    --verde:rgb(92,152,58);
+    --branco:#fff;
+    --vermelho: rgb(180,9,33);
+}
+
 body {
     background: linear-gradient(135deg,  #0f2027, #203a43,#2c5364);
 }
@@ -10,6 +23,19 @@ body {
     margin: 1rem auto;
     color: white;
     gap: 2rem;
+}
+
+#menuAtestado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    font-size: 2rem;
+    width: 5rem;
+    height: 3.5rem;
+    background-color: var(--verde);
+    border-radius: 10px;
+    margin: 2rem;
 }
 
 .inputsData {
@@ -98,19 +124,39 @@ body {
 
 }
 
-#btnHistoricoDeAtestados, #btnArquivarAtestado {
-    width: auto;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido inicialmente */
+    width: 250px;
     height: auto;
-    margin-right: 70%;
-    background-color: black;
-    color: white;
-    font-weight: 500;
-    padding: 5px;
-    font-size: 1em;
-    border-radius: 15px;
-    border: 0.1 solid white;
-    margin: 1rem;
+    margin-top: 15rem;
+    background-color: #333;
+    color: var(--branco);
+    transition: left 0.3s ease; /* Animação suave */
+    padding: 10px;
+    z-index: 999;
 }
+  
+/* Conteúdo do menu */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.sidebar li {
+    padding: 5px;
+}
+  
+.sidebar li a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.sidebar li:hover {
+    cursor: pointer;
+}
+
 
 .btnSelectArquivo, .btnCaptura {
     width: 20%;

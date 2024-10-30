@@ -28,6 +28,21 @@ botaoTirarFoto.addEventListener("click", function () {
     mensagem.style.display = "block";
 });
 */
+const menuAtestado = document.getElementById("menuAtestado");
+
+menuAtestado.addEventListener("click", function() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px"; // Fecha o menu
+        menuAtestado.innerHTML = '<i class="fa-solid fa-bars"></i>'; // Ícone original de menu
+        menuAtestado.style.backgroundColor = "var(--verde)"; 
+    } else {
+        sidebar.style.left = "0px"; // Abre o menu
+        menuAtestado.innerHTML = '<i class="fa-solid fa-x"></i>'; // Ícone de fechar
+        menuAtestado.style.backgroundColor = "var(--vermelho)";
+    }
+});
+
 
 const botaoIniciarCamera = document.querySelector("[data-video-botao]");
 const campoCamera = document.querySelector("[data-camera]");
@@ -101,6 +116,9 @@ btnArquivarAtestado.addEventListener("click", function() {
                             <div class="inputsData">
                                 <label for="dataTermino">Data Término:</label>
                                 <input id="dataTermino" name="dataTermino" type="date" required>
-                            </div>`
+                            </div>
+                            <button type="button" class="btnSelectArquivo">Selecionar Arquivo</button>`
 })
 
+
+  

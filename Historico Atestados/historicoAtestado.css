@@ -1,12 +1,13 @@
-* {
+*{
     margin: 0;
     padding: 0;
+    font-family: 'poppins',sans-serif;
 }
 
 :root {
     --verde:rgb(92,152,58);
     --branco:#fff;
-    --vermelho: rgb(180,9,33)
+    --vermelho: rgb(180,9,33);
 }
 
 body {
@@ -32,7 +33,7 @@ body {
     padding: 0 0.5rem;
     border-radius: 15px;
     background-color: var(--verde);
-    color: white;
+    color: var(--branco);
     text-align: center;
 }
 
@@ -42,7 +43,7 @@ body {
     border: none;
     border-radius: 10px;
     background-color: var(--verde);
-    color: white;
+    color: var(--branco);
 }
 
 #consultaAtestados {
@@ -56,12 +57,27 @@ body {
     margin-top: 2rem;
 }
 
+.infCard {
+    display: flex;
+    justify-content: space-between;
+    align-items:last baseline;
+}
+
+.btnExcluirProjeto {
+    margin-left: 7rem;
+    border-radius: 50px;
+    padding: 10px;
+    border: 1px solid var(--branco);
+}
+
 .cardAtestado {
     color: var(--branco);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 200;
     background-color: var(--verde);
     padding: 0.7rem;
     border-radius: 10px;
+    box-shadow: 3px 10px 20px rgb(110, 109, 109);
 }
 
 .cardAtestado p {
