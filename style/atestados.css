@@ -36,7 +36,10 @@ body {
     background-color: var(--verde);
     border-radius: 10px;
     margin: 2rem;
+    cursor: pointer;
 }
+
+
 
 .inputsData {
     display: flex;
@@ -177,8 +180,10 @@ body {
 
 #SelectArquivo {
     display: none;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
     gap: 2px;
 }
 
