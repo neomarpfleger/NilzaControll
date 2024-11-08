@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar PDF</title>
+    <style>
+        /* CSS básico para estilizar o formulário */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .input-field {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerar PDF com Logo</h1>
+        <img id="imgLogo" src="../../imagens/Inserir um subtítulo (3).png" alt="">
+        <div class="input-field">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" placeholder="Digite seu nome">
+        </div>
+        <div class="input-field">
+            <label for="info">Informação:</label>
+            <input type="text" id="info" placeholder="Digite uma informação">
+        </div>
+        <button onclick="generatePDF()">Gerar PDF</button>
+    </div>
+
+    <!-- Adicionando jsPDF via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Obtendo a imagem do HTML e convertendo para Base64
+            const imgElement = document.getElementById('imgLogo');
+            const imgData = await getBase64Image(imgElement);
+    
+            // Adicionando a imagem ao PDF (ajuste as coordenadas e tamanho conforme necessário)
+            doc.addImage(imgData, "PNG", 20, 80, 50, 30);
+    
+            // Obtendo os dados
+            const name = document.getElementById('name').value;
+            const info = document.getElementById('info').value;
+    
+            // Adicionando texto ao PDF
+            doc.text("PDF Gerado com Dados", 20, 80);
+            doc.text(`Nome: ${name}`, 150, 20);
+            doc.text(`Informação: ${info}`, 20, 60);
+
+            // Salvando o PDF
+            doc.save("documento.pdf");
+        }
+    
+        // Função para converter imagem HTML para Base64
+        function getBase64Image(img) {
+            return new Promise((resolve, reject) => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+                const dataURL = canvas.toDataURL("image/png");
+                resolve(dataURL);
+            });
+        }
+    </script>
+    
+    
+</body>
+</html>
