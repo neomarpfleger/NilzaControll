@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/solicitacaoEPI.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../headerMobile/headerMobile.css">
 </head>
 <body>
     <header>
@@ -62,6 +63,54 @@
                 <h1 id="nomeUsuarioLogado"></h1>
             </div>
         </div>
+        <div id="headermobile">
+            <div id="menuAtestado"><i class="fa-solid fa-bars"></i></div>
+            <div class="sidebar" id="sidebar">
+              <div id="btnFechar"><i class="fa-solid fa-x"></i></div>
+              <ul>
+                <li class="item">
+                  <a href="./solicitacaoEPI.html">
+                    <span class="icone">
+                      <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="text">Início</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="./separacao.html">
+                    <span class="icone">
+                      <i class="fa-solid fa-rectangle-list"></i>
+                    </span>
+                    <span class="text">Separação</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="./historico.html">
+                    <span class="icone">
+                      <i class="fa-solid fa-book"></i>
+                    </span>
+                    <span class="text">Histórico</span>
+                  </a>
+                </li>
+                <li class="item ative">
+                  <a href="./atestados.html">
+                    <span class="icone">
+                      <i class="fa-solid fa-notes-medical"></i>
+                    </span>
+                    <span class="text">Atestados</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="../Estoque EPI/estoqueEPI.html">
+                    <span class="icone">
+                      <i class="fa-solid fa-helmet-safety"></i>
+                    </span>
+                    <span class="text">Estoque</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div> 
     </header>
     
 <main class="container">
@@ -142,6 +191,7 @@
         document.getElementById("bemVindoUsuario").textContent = `Bem Vindo(a) ${nomeFormatado}!`;
     }
 </script>
+<script type="module" src="../headerMobile/headerMobile.js"></script>
 <script type="module" src="../js/idUsuario.js"></script>
 <script type="module" src="../js/nomedousuario.js"></script>
 <script type="module" src="../js/header.js"></script>
