@@ -19,7 +19,7 @@ main {
 }
 .btnRegistraPonto,
 .btnEditarPonto {
-  background-color: black;
+  background-color: var(--verde);
   color: white;
   font-weight: 500;
   padding: 5px;
@@ -46,4 +46,32 @@ main {
   border-radius: 15px;
   text-align-last: center;
   font-size: 1.2rem;
+}
+#dateDoPonto {
+  border: none;
+  width: 8rem;
+  height: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  padding: 0 0.5rem;
+  border-radius: 15px;
+  background-color: var(--verde);
+  color: var(--branco);
+  text-align: center;
+}
+#meuFormulario{
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (max-width: 480px){
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  #containerPonto {
+    padding-top: 5rem;
+    width: 100vw;
+    height: auto;
+  }
 }

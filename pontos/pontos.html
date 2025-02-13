@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <div id="navegacao" style="width: auto">
+      <div id="navegacao">
         <ul>
           <li class="item">
             <a href="../html/solicitacaoEPI.html">
@@ -86,7 +86,7 @@
           <div id="btnFechar"><i class="fa-solid fa-x"></i></div>
           <ul>
             <li class="item">
-              <a href="./solicitacaoEPI.html">
+              <a href="../html/solicitacaoEPI.html">
                 <span class="iconeMobile">
                   <i class="fa-solid fa-house"></i>
                 </span>
@@ -149,24 +149,43 @@
       <section>
         <div id="containerPainel">
           <div class="divSelectColaborador">
-            <label class="campo__etiqueta" for="item">Selecione colaborador:</label>
-            <select id="item" class="selectColaborador" name="item" required>
+            <label class="campo__etiqueta" for="item"
+              >Selecione colaborador:</label
+            >
+            <select
+              id="selectcolaborador"
+              class="selectColaborador"
+              name="item"
+              required
+            >
               <option value=" "></option>
-              <option value="Camiseta">Camiseta</option>
-              <option value="Camiseta longa">Camiseta longa</option>
-              <option value="Calça">Calça</option>
-              <option value="Botina">Botina</option>
-              <option value="Luva pano">Luva pano</option>
-              <option value="Luva latex">Luva latex</option>
-              <option value="Protetor auditivo">Protetor auditivo</option>
-              <option value="Protetor pele">Protetor pele</option>
-              <option value="Moletao">Moletão</option>
             </select>
+            <form id="meuFormulario">
+              <label type="text" for="dateDoPonto">Data de registro</label>
+              <input type="date" name="dateDoPonto" id="dateDoPonto" />
+              <label for="horario">Entrada:</label>
+              <input type="time" id="horario" name="horario" />
+              <label for="horario">Saída almoço:</label>
+              <input type="time" id="horario" name="horario" />
+              <label for="horario">Entrada almoço:</label>
+              <input type="time" id="horario" name="horario" />
+              <label for="horario">saída:</label>
+              <input type="time" id="horario" name="horario" />
+              <label for="horario">Entrada extra:</label>
+              <input type="time" id="horario" name="horario" />
+              <label for="horario">Saída extra:</label>
+              <input type="time" id="horario" name="horario" />
+              <button type="submit">Registrar pontos.</button>
+            </form>
           </div>
         </div>
       </section>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
     <script type="module" src="../js/header.js"></script>
-    <script type="module" src="./headerMobile.js"></script>
+    <script type="module" src="../headerMobile/headerMobile.js"></script>
+    <script type="module" src="./selctColaborador.js"></script>
+    <script type="module" src="./keydown.js"></script>
   </body>
 </html>
