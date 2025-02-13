@@ -1,0 +1,49 @@
+:root {
+  --crl:#222327;
+  --verde:rgb(92,152,58);
+  --branco:#fff;
+}
+#navegacao  {
+  border-bottom-left-radius: 0;
+}
+main {
+  display: flex;
+}
+#containerPonto {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco);
+  width: 20rem;
+  height: calc(100vh - 6.4rem);;
+  padding: 1rem;
+}
+.btnRegistraPonto,
+.btnEditarPonto {
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: none;
+  margin: 0.5rem 2rem;
+}
+#containerPainel {
+  width: 100%;
+}
+.divSelectColaborador{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+.divSelectColaborador label {
+  color: var(--branco);
+}
+.selectColaborador {
+  margin-top: 0.5rem;
+  width: 200px;
+  height: 2rem;
+  border-radius: 15px;
+  text-align-last: center;
+  font-size: 1.2rem;
+}

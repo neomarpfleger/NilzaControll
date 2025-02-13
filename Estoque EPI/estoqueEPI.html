@@ -1,108 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NilzaControll/EPI</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="estoqueEPI.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style/header.css" />
+    <link rel="stylesheet" href="estoqueEPI.css" />
+  </head>
+  <body>
     <header>
-        <div id="navegacao">
-            <ul>
-                <li class="item">
-                    <a href="../html/solicitacaoEPI.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-house"></i>
-                        </span>
-                        <span class="text">Início</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../html/separacao.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-rectangle-list"></i>
-                        </span>
-                            <span class="text">Separação</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../html/historico.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-book"></i>
-                        </span>
-                        <span class="text">Histórico</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../html/atestados.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-notes-medical"></i>
-                        </span>
-                        <span class="text">Atestados</span>
-                    </a>
-                </li>
-                <li class="item ative">
-                    <a href="./estoqueEPI.html">
-                        <span class="icone">
-                            <i class="fa-solid fa-helmet-safety"></i>
-                        </span>
-                        <span class="text">EPIs</span>
-                    </a>
-                </li>
-                <div class="indicador"></div>
-            </ul>
-            <div id="logoNilzaControll">
-                <img class="imgLogo" src="../imagens/Inserir um subtítulo (3).png" alt="">
-            </div>
-            <div id="usuarioLogado">
-                <h1 id="nomeUsuarioLogado"></h1>
-            </div>
+      <div id="navegacao">
+        <ul>
+          <li class="item">
+            <a href="../html/solicitacaoEPI.html">
+              <span class="icone">
+                <i class="fa-solid fa-house"></i>
+              </span>
+              <span class="text">Início</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="../html/separacao.html">
+              <span class="icone">
+                <i class="fa-solid fa-rectangle-list"></i>
+              </span>
+              <span class="text">Separação</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="../html/historico.html">
+              <span class="icone">
+                <i class="fa-solid fa-book"></i>
+              </span>
+              <span class="text">Histórico</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="../html/atestados.html">
+              <span class="icone">
+                <i class="fa-solid fa-notes-medical"></i>
+              </span>
+              <span class="text">Atestados</span>
+            </a>
+          </li>
+          <li class="item ative">
+            <a href="./estoqueEPI.html">
+              <span class="icone">
+                <i class="fa-solid fa-helmet-safety"></i>
+              </span>
+              <span class="text">EPIs</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="../pontos/pontos.html">
+              <span class="iconeAjuste">
+                <i class="fa-solid fa-stopwatch"></i>
+              </span>
+              <span class="text">Pontos</span>
+            </a>
+          </li>
+          <div class="indicador"></div>
+        </ul>
+        <div id="logoNilzaControll">
+          <img
+            class="imgLogo"
+            src="../imagens/Inserir um subtítulo (3).png"
+            alt=""
+          />
         </div>
+        <div id="usuarioLogado">
+          <h1 id="nomeUsuarioLogado"></h1>
+        </div>
+      </div>
     </header>
     <main>
-        <div class="inputs">
-            <h1>Adicionar EPI</h1>
-            <label for="nomeEPI">EPI</label>
-            <input id="nomeEPI" type="text" required>
+      <div class="inputs">
+        <h1>Adicionar EPI</h1>
+        <label for="nomeEPI">EPI</label>
+        <input id="nomeEPI" type="text" required />
 
-            <label for="tamanhoEPI">Tamanho</label>
-            <input id="tamanhoEPI" type="text" required>
+        <label for="tamanhoEPI">Tamanho</label>
+        <input id="tamanhoEPI" type="text" required />
 
-            <label for="quantEPI">Entrada</label>
-            <input id="quantEPI" type="number" required>
+        <label for="quantEPI">Entrada</label>
+        <input id="quantEPI" type="number" required />
 
-            <label for="estoqueMinimo">Estoque Minimo</label>
-            <input id="estoqueMinimo" type="text" required>
+        <label for="estoqueMinimo">Estoque Minimo</label>
+        <input id="estoqueMinimo" type="text" required />
 
-            <button id="CriarEPI" type="submit">Criar Item</button>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>EPI</th>
-                    <th>Tamanho</th>
-                    <th>Estoque</th>
-                    <th>Estoque Minimo</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <tbody class="listaDeEPI"></tbody>
-        </table>
+        <button id="CriarEPI" type="submit">Criar Item</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>EPI</th>
+            <th>Tamanho</th>
+            <th>Estoque</th>
+            <th>Estoque Minimo</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody class="listaDeEPI"></tbody>
+      </table>
     </main>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
-    
+
     <script type="module" src="../main.js"></script>
     <script type="module" src="./modalEdicao.js"></script>
     <script type="module" src="./estoqueEPI.js"></script>
     <script type="module" src="./AdicionaEPI.js"></script>
     <script src="../js/header.js"></script>
-</body>
+  </body>
 </html>
