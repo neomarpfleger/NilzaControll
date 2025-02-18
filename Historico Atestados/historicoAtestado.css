@@ -35,11 +35,9 @@ body {
 .date {
   margin-top: 0.5rem;
 }
-
 label {
   color: white;
 }
-
 #btnConsultar {
   margin-top: 0.5rem;
   background-color: var(--verde);
@@ -49,7 +47,6 @@ label {
   border-radius: 10px;
   color: var(--branco);
 }
-
 #btnVoltar {
   margin-top: 0.5rem;
   width: 10rem;
@@ -59,7 +56,6 @@ label {
   color: var(--branco);
   background-color: var(--vermelho);
 }
-
 #consultaAtestados {
   width: 100vw;
   height: auto;

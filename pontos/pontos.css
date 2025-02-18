@@ -1,9 +1,9 @@
 :root {
-  --crl:#222327;
-  --verde:rgb(92,152,58);
-  --branco:#fff;
+  --crl: #222327;
+  --verde: rgb(92, 152, 58);
+  --branco: #fff;
 }
-#navegacao  {
+#navegacao {
   border-bottom-left-radius: 0;
 }
 main {
@@ -14,11 +14,11 @@ main {
   flex-direction: column;
   background-color: var(--branco);
   width: 20rem;
-  height: calc(100vh - 6.4rem);;
+  height: calc(100vh - 6.4rem);
   padding: 1rem;
 }
 .btnRegistraPonto,
-.btnEditarPonto {
+.btnFecharPonto {
   background-color: var(--verde);
   color: white;
   font-weight: 500;
@@ -31,7 +31,7 @@ main {
 #containerPainel {
   width: 100%;
 }
-.divSelectColaborador{
+.divSelectColaborador {
   display: flex;
   flex-direction: column;
   margin: 2rem;
@@ -39,7 +39,7 @@ main {
 .divSelectColaborador label {
   color: var(--branco);
 }
-.selectColaborador {
+.nomeColaborador {
   margin-top: 0.5rem;
   width: 200px;
   height: 2rem;
@@ -47,7 +47,7 @@ main {
   text-align-last: center;
   font-size: 1.2rem;
 }
-#dateDoPonto {
+#dataPonto {
   border: none;
   width: 8rem;
   height: 1.5rem;
@@ -58,13 +58,31 @@ main {
   color: var(--branco);
   text-align: center;
 }
-#meuFormulario{
+#meuFormulario {
   display: flex;
   flex-direction: column;
 }
+#meuFormulario input {
+  margin-top: 0.5rem;
+  width: 200px;
+  height: 2rem;
+  border-radius: 15px;
+  text-align-last: center;
+  font-size: 1.2rem;
+}
+.labelInput,
+.inputHoras {
+  display: flex;
+  flex-direction: column;
+}
+.colaboradorData,
+.divHoras {
+  display: flex;
+  flex-direction: row;
+}
 
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
   main {
     display: flex;
     flex-direction: column;
