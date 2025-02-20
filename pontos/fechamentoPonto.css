@@ -1,3 +1,8 @@
+#inputDates{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
 #fechamentoPonto {
   width: 100%;
   height: 100%;
@@ -12,6 +17,7 @@
   background-color: var(--verde);
   color: var(--branco);
   text-align: center;
+  cursor: pointer;
 }
 .date {
   margin-top: 0.5rem;
@@ -27,4 +33,11 @@ label {
   border: none;
   border-radius: 10px;
   color: var(--branco);
+  cursor: pointer;
+}
+#pontoColaborador {
+  color: var(--branco);
+}
+#tabelaPontos {
+  display: none;
 }
