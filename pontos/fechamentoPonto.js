@@ -55,24 +55,23 @@ btnFecharPonto.addEventListener("click", function() {
         alert("Favor preencher os campos com a data inicial e final do fechamento");
         return;
       }
-
+  
       const tabelaPontos = document.getElementById("tabelaPontos");
       tabelaPontos.style.display = "block";
-
-      
+  
       const categoriasRef = collection(db, "categorias");
       const q = query(categoriasRef, where("fechamentoPonto", "==", true));
       const querySnapshot = await getDocs(q);
       const tabelaBody = document.getElementById("tabelaBody");
       const headerRow = document.getElementById("headerRow");
-
+  
       tabelaBody.innerHTML = "";
-
+  
       if (querySnapshot.empty) {
         tabelaBody.innerHTML = "<tr><td colspan='2'>Nenhum colaborador precisa fechar o ponto.</td></tr>";
         return;
       }
-
+  
       const colaboradores = [];
       querySnapshot.forEach((doc) => {
         const colaborador = doc.data();
@@ -81,50 +80,62 @@ btnFecharPonto.addEventListener("click", function() {
         th.textContent = colaborador.nome;
         headerRow.appendChild(th);
       });
-
+  
       let dataAtual = new Date(inicioDaBusca + "T00:00:00");
       const dataFinal = new Date(finalDaBusca + "T00:00:00");
-      
+  
       while (dataAtual <= dataFinal) {
         const options = { weekday: "short", day: "2-digit", month: "2-digit" };
         const dataFormatada = dataAtual.toLocaleDateString("pt-BR", options);
         const [diaSemana, diaMes] = dataFormatada.split(", ");
-        
+  
         const row = document.createElement("tr");
         row.innerHTML = `<td>${diaSemana}</td><td>${diaMes}</td>`;
-        
+  
         for (const colaborador of colaboradores) {
           const td = document.createElement("td");
-          
+  
           const pontoRef = collection(db, "ponto");
           const pontoQuery = query(pontoRef, where("nomeColaborador", "==", colaborador), where("dataPonto", "==", dataAtual.toISOString().split('T')[0]));
           const pontoSnapshot = await getDocs(pontoQuery);
-          
+  
           let totalMinutos = 0;
-          pontoSnapshot.forEach((doc) => {
-            const ponto = doc.data();
-            
-            function calcularMinutos(horario) {
-              if (!horario) return 0;
-              const [hora, minuto] = horario.split(":" ).map(Number);
-              return hora * 60 + minuto;
-            }
+          let pontoFaltante = false;
+          let horasExtras = 0;
+          let observacao = "";
+  
+          if (pontoSnapshot.empty) {
+            observacao = "Nenhum ponto registrado.";
+            td.textContent = observacao;
+          } else {
+            pontoSnapshot.forEach((doc) => {
+              const ponto = doc.data();
+              totalMinutos = ponto.totalMinutosTrabalhados || 0; // Usa o valor salvo no banco
+              
+              // Verificação de margem de 10 minutos para mais ou para menos
+              const diaSemana = dataAtual.toLocaleDateString("pt-BR", { weekday: "short" }).toLowerCase().replace(".", "");
+              const cargaHoraria = diaSemana === "sex" ? 480 : 540;
+              const margem = 10; // Define a margem de tolerância
+              const diferenca = Math.abs(totalMinutos - cargaHoraria);
 
-            const entrada = calcularMinutos(ponto.pontoEntrada);
-            const saida = calcularMinutos(ponto.pontoSaida);
-            const entradaAlmoco = calcularMinutos(ponto.pontoEntradaAlmoco);
-            const saidaAlmoco = calcularMinutos(ponto.pontoSaidaAlmoco);
-            const entradaExtra = calcularMinutos(ponto.pontoEntradaExtra);
-            const saidaExtra = calcularMinutos(ponto.pontoSaidaExtra);
-            
-            totalMinutos = (saida - entrada) - (saidaAlmoco - entradaAlmoco) + (saidaExtra - entradaExtra);
-          });
-          
-          const cargaHoraria = diaSemana === "sex" ? 480 : 540;
-          td.textContent = totalMinutos >= cargaHoraria ? "✅ Cumpriu" : "❌ Não cumpriu";
+              if (diferenca <= margem) {
+                td.textContent = "✅ Cumpriu";
+              } else if (totalMinutos < cargaHoraria) {
+                td.textContent = `❌ Não cumpriu (${diferenca} min faltando)`;
+              } else {
+                td.textContent = `⚠️ Hora extra (${diferenca} min extra)`;
+              }     
+            });
+          }
+  
+          // Se não tiver ponto registrado no dia, mostrar observação
+          if (observacao) {
+            td.textContent = observacao;
+          }
+  
           row.appendChild(td);
         }
-        
+  
         tabelaBody.appendChild(row);
         dataAtual.setDate(dataAtual.getDate() + 1);
       }
@@ -132,4 +143,5 @@ btnFecharPonto.addEventListener("click", function() {
       console.error("Erro ao consultar colaboradores:", error);
     }
   });
+  
 });

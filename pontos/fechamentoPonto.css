@@ -41,3 +41,46 @@ label {
 #tabelaPontos {
   display: none;
 }
+/* Estiliza a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  margin: 1rem;
+}
+
+/* Estiliza os cabeçalhos com variações de verde */
+th {
+  background-color: var(--verde); /* Verde original */
+  color: var(--branco);
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Estiliza as células */
+td {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Alterna as cores das linhas */
+tr:nth-child(even) {
+  background-color: rgb(220, 240, 180); /* Verde claro */
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(255, 255, 255); /* Branco */
+}
+
+/* Estiliza a linha ao passar o mouse */
+tr:hover {
+  background-color: rgb(180, 220, 150); /* Verde suave */
+}
+
+/* Centraliza os ícones e textos das células */
+td, th {
+  text-align: center;
+}

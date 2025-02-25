@@ -40,6 +40,10 @@ main {
   color: var(--branco);
 }
 .nomeColaborador {
+  cursor: pointer;
+  background-color: var(--verde);
+  border: none;
+  color: var(--branco);
   margin-top: 0.5rem;
   width: 200px;
   height: 2rem;
@@ -63,7 +67,11 @@ main {
   flex-direction: column;
 }
 #meuFormulario input {
-  margin-top: 0.5rem;
+  cursor: pointer;
+  background-color: var(--verde);
+  border: none;
+  color: var(--branco);
+  margin-top: 0.2rem;
   width: 200px;
   height: 2rem;
   border-radius: 15px;
@@ -75,10 +83,24 @@ main {
   display: flex;
   flex-direction: column;
 }
+.inputHoras label {
+  margin-top: 2rem;
+}
 .colaboradorData,
 .divHoras {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
+}
+#meuFormulario button {
+  margin: 2rem auto;
+  background-color: var(--verde);
+  width: 10rem;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  color: var(--branco);
+  cursor: pointer;
 }
 
 

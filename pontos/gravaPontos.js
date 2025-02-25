@@ -107,18 +107,66 @@ btnRegistraPonto.addEventListener("click", async function registraPonto() {
     const nomeColaborador = document.getElementById("nomeColaborador").value;
     const dataPonto = document.getElementById("dataPonto").value;
     const pontoObservacao = document.getElementById("pontoObservacao").value;
-    const pontoEntrada = document.getElementById("pontoEntrada").value;
-    const pontoSaidaAlmoco = document.getElementById("pontoSaidaAlmoco").value;
-    const pontoEntradaAlmoco = document.getElementById("pontoEntradaAlmoco").value;
-    const pontoSaida = document.getElementById("pontoSaida").value;
-    const pontoEntradaExtra = document.getElementById("pontoEntradaExtra").value;
-    const pontoSaidaExtra = document.getElementById("pontoSaidaExtra").value;
+    const pontoEntrada = document.getElementById("pontoEntrada").value || null;
+    const pontoSaidaAlmoco = document.getElementById("pontoSaidaAlmoco").value || null;
+    const pontoEntradaAlmoco = document.getElementById("pontoEntradaAlmoco").value || null;
+    const pontoSaida = document.getElementById("pontoSaida").value || null;
+    const pontoEntradaExtra = document.getElementById("pontoEntradaExtra").value || null;
+    const pontoSaidaExtra = document.getElementById("pontoSaidaExtra").value || null;
 
     // Validação básica
     if (!nomeColaborador || !dataPonto) {
       alert("Por favor, preencha os campos obrigatórios.");
       return;
     }
+
+    // Monta a lista de horários ignorando os valores nulos
+    const horarios = [
+      pontoEntrada,
+      pontoSaidaAlmoco,
+      pontoEntradaAlmoco,
+      pontoSaida,
+      pontoEntradaExtra,
+      pontoSaidaExtra,
+    ].filter(horario => horario !== null);
+
+    // Valida se há pelo menos dois horários registrados para cálculo
+    if (horarios.length < 2) {
+      alert("É necessário pelo menos um par de horários para calcular o total de minutos trabalhados.");
+      return;
+    }
+
+    // Função para converter horário "HH:MM" em minutos totais do dia
+    function converterParaMinutos(horario) {
+      const [horas, minutos] = horario.split(":").map(Number);
+      return horas * 60 + minutos;
+    }
+
+    // Função para calcular total de minutos trabalhados
+    function calcularMinutosTrabalhados(marcacoes) {
+      if (marcacoes.length % 2 !== 0) {
+        console.error("Número ímpar de marcações. Certifique-se de que todas as entradas tenham uma saída correspondente.");
+        return 0;
+      }
+
+      let totalMinutos = 0;
+
+      for (let i = 0; i < marcacoes.length; i += 2) {
+        const entrada = converterParaMinutos(marcacoes[i]);
+        const saida = converterParaMinutos(marcacoes[i + 1]);
+
+        if (saida > entrada) {
+          totalMinutos += saida - entrada;
+        } else {
+          console.error(`Horário inválido: entrada ${marcacoes[i]} depois da saída ${marcacoes[i + 1]}`);
+        }
+      }
+
+      return totalMinutos;
+    }
+
+    // Calcula o total de minutos trabalhados
+    const totalMinutosTrabalhados = calcularMinutosTrabalhados(horarios);
 
     try {
       // Salva os dados no Firestore na coleção "ponto"
@@ -132,8 +180,10 @@ btnRegistraPonto.addEventListener("click", async function registraPonto() {
         pontoSaida,
         pontoEntradaExtra,
         pontoSaidaExtra,
+        totalMinutosTrabalhados, // Adiciona o total de minutos trabalhados
         timestamp: new Date(), // Adiciona um timestamp
       });
+      console.log(totalMinutosTrabalhados)
 
       alert("Registro de ponto salvo com sucesso!");
       form.reset(); // Limpa o formulário após salvar
@@ -142,4 +192,5 @@ btnRegistraPonto.addEventListener("click", async function registraPonto() {
       alert("Erro ao salvar ponto. Tente novamente.");
     }
   });
+
 });
