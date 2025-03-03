@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NilzaControll/EPI</title>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NilzaControll</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,114 +12,203 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../style/header.css" />
-    <link rel="stylesheet" href="estoqueEPI.css" />
-  </head>
-  <body>
-    <header>
-      <div id="navegacao">
+    <link rel="stylesheet" href="../headerMobile/headerMobile.css" />
+    <link rel="stylesheet" href="../pontos/pontos.css" />
+    <link rel="stylesheet" href="../style/btnInputLabel.css" />
+    <link rel="stylesheet" href="./estoqueEPI.css" />
+</head>
+<body>
+
+  <header>
+    <div id="navegacao">
+      <ul>
+        <li class="item">
+          <a href="../html/solicitacaoEPI.html">
+            <span class="icone">
+              <i class="fa-solid fa-house"></i>
+            </span>
+            <span class="text">Início</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="../html/separacao.html">
+            <span class="icone">
+              <i class="fa-solid fa-rectangle-list"></i>
+            </span>
+            <span class="text">Separação</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="../html/historico.html">
+            <span class="icone">
+              <i class="fa-solid fa-book"></i>
+            </span>
+            <span class="text">Histórico</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="../html/atestados.html">
+            <span class="icone">
+              <i class="fa-solid fa-notes-medical"></i>
+            </span>
+            <span class="text">Atestados</span>
+          </a>
+        </li>
+        <li class="item ative">
+          <a href="../Estoque EPI/estoqueEPI.html">
+            <span class="icone">
+              <i class="fa-solid fa-helmet-safety"></i>
+            </span>
+            <span class="text">EPIs</span>
+          </a>
+        </li>
+        <li class="item ">
+          <a href="../pontos/pontos.html">
+            <span class="iconeAjuste">
+              <i class="fa-solid fa-stopwatch"></i>
+            </span>
+            <span class="text">Pontos</span>
+          </a>
+        </li>
+        <div class="indicador"></div>
+      </ul>
+      <div id="logoNilzaControll">
+        <img
+          class="imgLogo"
+          src="../imagens/Inserir um subtítulo (3).png"
+          alt=""
+        />
+      </div>
+      <div id="usuarioLogado">
+        <h1 id="nomeUsuarioLogado"></h1>
+      </div>
+    </div>
+    <div id="headermobile">
+      <div id="menuAtestado"><i class="fa-solid fa-bars"></i></div>
+      <div class="sidebar" id="sidebar">
+        <div id="btnFechar"><i class="fa-solid fa-x"></i></div>
         <ul>
           <li class="item">
             <a href="../html/solicitacaoEPI.html">
-              <span class="icone">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-house"></i>
               </span>
               <span class="text">Início</span>
             </a>
           </li>
           <li class="item">
-            <a href="../html/separacao.html">
-              <span class="icone">
+            <a href="./separacao.html">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-rectangle-list"></i>
               </span>
               <span class="text">Separação</span>
             </a>
           </li>
           <li class="item">
-            <a href="../html/historico.html">
-              <span class="icone">
+            <a href="./historico.html">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-book"></i>
               </span>
               <span class="text">Histórico</span>
             </a>
           </li>
           <li class="item">
-            <a href="../html/atestados.html">
-              <span class="icone">
+            <a href="./atestados.html">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-notes-medical"></i>
               </span>
               <span class="text">Atestados</span>
             </a>
           </li>
-          <li class="item ative">
-            <a href="./estoqueEPI.html">
-              <span class="icone">
+          <li class="item">
+            <a href="../Estoque EPI/estoqueEPI.html">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-helmet-safety"></i>
               </span>
-              <span class="text">EPIs</span>
+              <span class="text">Estoque</span>
             </a>
           </li>
           <li class="item">
             <a href="../pontos/pontos.html">
-              <span class="iconeAjuste">
+              <span class="iconeMobile">
                 <i class="fa-solid fa-stopwatch"></i>
               </span>
               <span class="text">Pontos</span>
             </a>
           </li>
-          <div class="indicador"></div>
         </ul>
-        <div id="logoNilzaControll">
-          <img
-            class="imgLogo"
-            src="../imagens/Inserir um subtítulo (3).png"
-            alt=""
-          />
-        </div>
-        <div id="usuarioLogado">
-          <h1 id="nomeUsuarioLogado"></h1>
-        </div>
       </div>
-    </header>
-    <main>
-      <div class="inputs">
-        <h1>Adicionar EPI</h1>
-        <label for="nomeEPI">EPI</label>
-        <input id="nomeEPI" type="text" required />
-
-        <label for="tamanhoEPI">Tamanho</label>
-        <input id="tamanhoEPI" type="text" required />
-
-        <label for="quantEPI">Entrada</label>
-        <input id="quantEPI" type="number" required />
-
-        <label for="estoqueMinimo">Estoque Minimo</label>
-        <input id="estoqueMinimo" type="text" required />
-
-        <button id="CriarEPI" type="submit">Criar Item</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div id="containerPonto">
+        <button type="button" class="btnRegistraPonto btn01">Solicitar EPI</button>
+        <button type="button" class="btnEditarPonto btn02">#</button>
+        <button type="button" class="btnFecharPonto btn03">#</button>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>EPI</th>
-            <th>Tamanho</th>
-            <th>Estoque</th>
-            <th>Estoque Minimo</th>
-            <th>Excluir</th>
-          </tr>
-        </thead>
-        <tbody class="listaDeEPI"></tbody>
-      </table>
-    </main>
+    </section>
+    <section id="controlePonto">
+      <div id="containerPainel">
+        <form class="container__formulario" data-formulario>
+          <div class="formulario__campo">
+            <label class="campo__etiqueta" for="nomeColaborador">Selecione colaborador:</label>
+            <select id="nomeColaborador" class="nomeColaborador" name="item" required>
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <div class="formulario__campo uniformeOuEPI">
+            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
+            <select id="item" name="item" required>
+              <option value=" "></option>
+              <option value="Camiseta">Camiseta</option>
+              <option value="Camiseta longa">Camiseta longa</option>
+              <option value="Calça">Calça</option>
+              <option value="Botina">Botina</option>
+              <option value="Luva pano">Luva pano</option>
+              <option value="Luva latex">Luva latex</option>
+              <option value="Protetor auditivo">Protetor auditivo</option>
+              <option value="Protetor pele">Protetor pele</option>
+              <OPtion value="Moletao">Moletão</OPtion>
+            </select>
+          </div>
+          <div class="formulario__campo botina">
+            <label class="campo__etiqueta" for="tamBotina" >Selecione o tamanho da botina:</label><br>
+            <select id="tamBotina" class="select" name="quantidade" required>
+              <option value=" "></option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+            </select>
+          </div>
+          <div class="formulario__campo tamanhoUniforme">
+            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
+            <select id="tamUniforme" class="select" name="quantidade" required>
+              <option value=" "></option>
+              <option value="p">P</option>
+              <option value="m">M</option>
+              <option value="g">G</option>
+              <option value="gg">GG</option>
+            </select>
+          </div>
+          <div class="formulario__campo itemPadrao">
+            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
+            <select id="tamUnico" class="select" name="quantidade">
+              <option value="g">G</option> 
+            </select>
+          </div>
+          <button class="btnEnviaSolicitacao" type="submit">Adicionar item a minha lista</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
-
-    <script type="module" src="../main.js"></script>
-    <script type="module" src="./modalEdicao.js"></script>
-    <script type="module" src="./estoqueEPI.js"></script>
-    <script type="module" src="./AdicionaEPI.js"></script>
-    <script src="../js/header.js"></script>
-  </body>
+  <script type="module" src="../pontos/btnHover.js"></script>
+  <script type="module" src="./carregaNomes.js"></script>
+  <script type="module" src="../js/validacao.js"></script>
+  <script type="module" src="./enviaSolicitacao.js"></script>
+</body>
 </html>

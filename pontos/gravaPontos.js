@@ -73,7 +73,7 @@ btnRegistraPonto.addEventListener("click", async function registraPonto() {
               <input type="time" id="pontoSaidaExtra" name="pontoSaidaExtra" />
             </div>
           </div>
-          <button type="submit">Registrar pontos.</button>
+          <button type="submit">Registrar ponto.</button>
         </form>
       </div>
     </div>

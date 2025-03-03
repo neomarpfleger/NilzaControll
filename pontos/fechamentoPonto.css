@@ -6,6 +6,7 @@
 #fechamentoPonto {
   width: 100%;
   height: 100%;
+  align-items: center;
 }
 #inicioDaBusca,
 #finalDaBusca {
@@ -13,7 +14,7 @@
   width: 8rem;
   height: 1.5rem;
   padding: 0 0.5rem;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: var(--verde);
   color: var(--branco);
   text-align: center;
@@ -31,7 +32,7 @@ label {
   width: 10rem;
   padding: 0.3rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: var(--branco);
   cursor: pointer;
 }
@@ -46,41 +47,77 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: black;
   margin: 1rem;
 }
-
 /* Estiliza os cabeçalhos com variações de verde */
 th {
   background-color: var(--verde); /* Verde original */
   color: var(--branco);
-  padding: 5px;
+  padding: 5px 1rem;
   text-align: left;
   border: 1px solid #ccc;
 }
-
 /* Estiliza as células */
 td {
-  padding: 5px;
+  padding: 2px 1rem;
   border: 1px solid #ccc;
 }
-
 /* Alterna as cores das linhas */
 tr:nth-child(even) {
   background-color: rgb(220, 240, 180); /* Verde claro */
 }
-
 tr:nth-child(odd) {
   background-color: rgb(255, 255, 255); /* Branco */
 }
-
 /* Estiliza a linha ao passar o mouse */
 tr:hover {
   background-color: rgb(180, 220, 150); /* Verde suave */
 }
-
 /* Centraliza os ícones e textos das células */
 td, th {
-  text-align: center;
+  text-align:start;
+}
+#paginationControls {
+  display: none;
+  justify-content: center;
+  margin: 1rem;
+}
+#prevPage,
+#nextPage,
+#btnImprimir {
+  background-color: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem 0 0 2rem;
+}
+#pageInfo {
+  color: var(--verde);
+  font-size: 1.2rem;
+  margin: 1rem 0 0 2rem;
+}
+@media print {
+  header,
+  #containerPonto,
+  #prevPage,
+  #nextPage,
+  #btnImprimir,
+  #btnConsultar,
+  .date {
+    display: none ; /* Esconde tudo */
+  }
+  #tabelaPontos {
+    display: block !important; /* Exibe apenas a tabela */
+  }
+  #pageInfo {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  table {
+    margin: 0.5rem;
+  }
 }

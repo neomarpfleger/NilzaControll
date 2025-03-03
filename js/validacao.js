@@ -16,21 +16,29 @@ selectElement.addEventListener('change', function() {
 
     if(itemSelecionado =='Botina'){
         itemBotina.style.display = "block";
+        itemBotina.classList.add('tamanhoAtivo');
         tamanhoUniforme.style.display = "none";
+        tamanhoUniforme.classList.remove('tamanhoAtivo');
     } else {
         itemBotina.style.display = "none";
+        itemBotina.classList.remove('tamanhoAtivo');
     }
     
     if(itemSelecionado =='Camiseta' || itemSelecionado == 'Calça' || itemSelecionado == 'Moletao' || itemSelecionado == 'Camiseta longa'){
         tamanhoUniforme.style.display = "block";
+        tamanhoUniforme.classList.add('tamanhoAtivo');
     } else {
         tamanhoUniforme.style.display = "none";
+        tamanhoUniforme.classList.remove('tamanhoAtivo');
     }
     
     if(itemSelecionado == 'Luva pano' || itemSelecionado == 'Luva latex'){
         itemPadrao.style.display = "block";
+        itemPadrao.classList.add('tamanhoAtivo');
         tamanhoUniforme.style.display = "none";
+        tamanhoUniforme.classList.remove('tamanhoAtivo');
     } else {
         itemPadrao.style.display = "none";
+        itemPadrao.classList.remove('tamanhoAtivo');
     }
 });

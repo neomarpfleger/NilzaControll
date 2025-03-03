@@ -17,6 +17,7 @@ main {
   height: calc(100vh - 6.4rem);
   padding: 1rem;
 }
+.btnEditarPonto,
 .btnRegistraPonto,
 .btnFecharPonto {
   background-color: var(--verde);
@@ -27,6 +28,7 @@ main {
   border-radius: 15px;
   border: none;
   margin: 0.5rem 2rem;
+  cursor: pointer;
 }
 #containerPainel {
   width: 100%;
@@ -101,6 +103,10 @@ main {
   border-radius: 10px;
   color: var(--branco);
   cursor: pointer;
+}
+.btnHover {
+  background-color: rgb(58, 92, 152);;
+  scale: 1.1;
 }
 
 

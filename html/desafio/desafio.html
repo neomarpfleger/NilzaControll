@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio js</title>
+  </head>
+  <style>
+    #container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    #numero {
+      margin-top: 0.5rem;
+    }
+    #btnVerificar {
+      margin-top: 1rem;
+      background-color: turquoise;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <section>
+      <div id="container">
+        <h1>Verificador de Ímpar ou Par!</h1>
+        <label for="numero">Digite um número:</label>
+        <input type="number" id="numero" placeholder="Digite um número" />
+        <button type="button" id="btnVerificar">Verificar</button>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById("btnVerificar").addEventListener("click", function () {
+        const input = document.getElementById("numero");
+        const valorDigitado = input.value.trim(); // Remove espaços extras
+        const numero = Number(valorDigitado); 
+
+        // Verifica se o campo está vazio ou se o valor digitado não é um número válido
+        if (valorDigitado === "" || isNaN(numero)) {
+          alert("Por favor, digite um número válido!");
+          input.value = ""; // Limpa o campo
+          input.focus();
+          return;
+        }
+
+        // Verifica se o número é par ou ímpar
+        if (numero % 2 === 0) {
+          alert(`O número ${numero} é par.`);
+        } else {
+          alert(`O número ${numero} é ímpar.`);
+        }
+
+        input.value = ""; // Limpa o campo após a verificação
+        input.focus(); // Foca no input para facilitar novas entradas
+      });
+
+      // Permitir pressionar Enter para verificar
+      document.getElementById("numero").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          document.getElementById("btnVerificar").click();
+        }
+      });
+    </script>
+</body>
+
+</html>
