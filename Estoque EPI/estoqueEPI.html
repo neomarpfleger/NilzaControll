@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,66 +149,13 @@
       </div>
     </section>
     <section id="controlePonto">
-      <div id="containerPainel">
-        <form class="container__formulario" data-formulario>
-          <div class="formulario__campo">
-            <label class="campo__etiqueta" for="nomeColaborador">Selecione colaborador:</label>
-            <select id="nomeColaborador" class="nomeColaborador" name="item" required>
-              <option value="">Selecione...</option>
-            </select>
-          </div>
-          <div class="formulario__campo uniformeOuEPI">
-            <label class="campo__etiqueta" for="item">Selecione seu uniforme ou EPI:</label><br>
-            <select id="item" name="item" required>
-              <option value=" "></option>
-              <option value="Camiseta">Camiseta</option>
-              <option value="Camiseta longa">Camiseta longa</option>
-              <option value="Calça">Calça</option>
-              <option value="Botina">Botina</option>
-              <option value="Luva pano">Luva pano</option>
-              <option value="Luva latex">Luva latex</option>
-              <option value="Protetor auditivo">Protetor auditivo</option>
-              <option value="Protetor pele">Protetor pele</option>
-              <OPtion value="Moletao">Moletão</OPtion>
-            </select>
-          </div>
-          <div class="formulario__campo botina">
-            <label class="campo__etiqueta" for="tamBotina" >Selecione o tamanho da botina:</label><br>
-            <select id="tamBotina" class="select" name="quantidade" required>
-              <option value=" "></option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-            </select>
-          </div>
-          <div class="formulario__campo tamanhoUniforme">
-            <label class="campo__etiqueta" for="tamUniforme">Selecione o tamanho do uniforme:</label><br>
-            <select id="tamUniforme" class="select" name="quantidade" required>
-              <option value=" "></option>
-              <option value="p">P</option>
-              <option value="m">M</option>
-              <option value="g">G</option>
-              <option value="gg">GG</option>
-            </select>
-          </div>
-          <div class="formulario__campo itemPadrao">
-            <label class="campo__etiqueta" for="tamUnico">Item de tamanho padrão:</label><br>
-            <select id="tamUnico" class="select" name="quantidade">
-              <option value="g">G</option> 
-            </select>
-          </div>
-          <button class="btnEnviaSolicitacao" type="submit">Adicionar item a minha lista</button>
-        </form>
-      </div>
+      
     </section>
   </main>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
 
   <script type="module" src="../pontos/btnHover.js"></script>
-  <script type="module" src="./carregaNomes.js"></script>
-  <script type="module" src="../js/validacao.js"></script>
   <script type="module" src="./enviaSolicitacao.js"></script>
 </body>
 </html>

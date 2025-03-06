@@ -12,3 +12,6 @@
 .itemPadrao {
     display: none;
 }
+.btnEnviaSolicitacao {
+    margin-left: 1rem;
+}
