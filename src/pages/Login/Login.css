@@ -1,0 +1,100 @@
+:root {
+  --verde: rgba(92, 152, 58, 0.418);
+  --branco: #caebeb;
+  --vermelho: rgb(180, 9, 33);
+}
+h1 {
+  color: var(--branco);
+  margin: 1rem;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+}
+.nomeSenha {
+  display: flex;
+  width: 18rem;
+  height: 20rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--verde);
+  flex-direction: column;
+  border-radius: 20px;
+  padding-bottom: 2rem;
+}
+label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.inputName {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0.7em 0 0.7rem;
+  border-radius: 20px;
+  color: var(--branco);
+}
+.inputName p {
+  font-size: 0.8rem;
+}
+/*input {
+  max-width: 12rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  margin: 0.7rem auto;
+  border: none;
+  border-radius: 20px;
+  padding-left: 1rem;
+  background-color: var(--branco);
+}*/
+#btnLogin {
+  color: var(--branco);
+  width: 10rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#btnLogin:hover {
+  cursor: pointer;
+  scale: calc(1.1);
+}
+
+@media only screen and (max-width: 480px) {
+  #nomeSenha {
+    width: 75%;
+  }
+}
+
+.nomeSenha {
+  transform: translateY(100px) scale(0.1);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 0.6s ease-out;
+}
+
+.nomeSenha.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+
+/* Estilização adicional para o botão de login */
+.btnLogin {
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btnLogin:hover {
+  background-color: #45a049;
+  scale: 1.05;
+}

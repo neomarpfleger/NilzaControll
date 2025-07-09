@@ -1,0 +1,17 @@
+/* 1. Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Variáveis de cor, fonte e espaçamento */
+:root {
+  --verde: rgb(92, 152, 58);
+  --primary-red:   #B40921;
+  --primary-dark:  #8A071A;
+  --neutral-light:#F4F4F4;
+  --neutral-dark: #333333;
+  --gold-accent:  #D6AF36;
+  --font-base:    'Roboto', sans-serif;
+}

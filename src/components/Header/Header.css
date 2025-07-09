@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --crl: #222327;
+  --verde: rgb(92, 152, 58);
+  --branco: #fff;
+}
+.navegacao {
+  display: flex;
+  width: 100vw;
+  height: 70px;
+  margin-top: 2rem;
+  background: var(--neutral-light);
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+.navegacao ul {
+  display: flex;
+  width: auto;
+  margin-left: 2rem;
+}
+.navegacao ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  cursor: pointer;
+}
+.nomeUsuarioLogado {
+  margin-right: 2rem;
+}
+.navegacao ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navegacao ul li a .icone,
+.navegacao ul li a .iconeAjuste {
+  display: block;
+  line-height: 70px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--crl);
+}
+.navegacao ul li.ative a .icone,
+.navegacao ul li.ative a .iconeAjuste {
+  transform: translateY(-35px);
+  color: var(--branco);
+}
+.navegacao ul li a .text {
+  position: absolute;
+  color: var(--crl);
+  font-weight: 400;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.navegacao ul li.ative .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+.indicador {
+  position: absolute;
+  top: -35px;
+  width: 70px;
+  height: 70px;
+  background: var(--verde);
+  border-radius: 50px;
+  border: 6px solid var(--neutral-dark);
+  transition: 0.5s;
+  z-index: 0;
+}
+.indicador::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--neutral-dark);
+}
+.indicador::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--neutral-dark);
+}
+
