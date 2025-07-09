@@ -1,17 +1,19 @@
 .inputGroup {
   display: flex;
   margin-bottom: 1rem;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .inputLabel {
-  margin: 0.3rem 1rem 0 0;
   font-weight: bold;
-  color: #333;
+  color: var(--neutral-dark);
 }
 
 .inputField {
-  padding: 5px;
+  width: 15rem;
+  padding: 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }

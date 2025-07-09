@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import logoNilzaControll from '/imagens/logoNilzaControll.png';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
+import Input from '../../components/ui/Input';
+import Button from '../../components/ui/Button'
 import './Login.css';
 
 export default function Login() {
@@ -35,8 +37,7 @@ export default function Login() {
       <div className={"nomeSenha " + (mostrar ? 'show' : '')}>
         <div className="inputName">
           <label htmlFor="nome">E-mail</label>
-          <p>Digite seu e-mail de acesso.</p>
-          <input
+          <Input
             type="email"
             name="nome"
             id="nome"
@@ -47,8 +48,7 @@ export default function Login() {
 
         <div className="inputName">
           <label htmlFor="senha">Senha</label>
-          <p>Digite sua senha de acesso.</p>
-          <input
+          <Input
             type="password"
             name="senha"
             id="senha"
@@ -59,9 +59,9 @@ export default function Login() {
 
         {erro && <p className="erroLogin">{erro}</p>}
 
-        <button className="btnLogin" type="button" onClick={handleLogin}>
+        <Button className="btnLogin" type="button" onClick={handleLogin}>
           ENTRAR
-        </button>
+        </Button>
       </div>
     </div>
   );
